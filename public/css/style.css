@@ -15,32 +15,52 @@ body {
 /* Navigation */
 .main-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
-    background: linear-gradient(to right, 
-        rgba(255, 255, 255, 0) 0%, 
-        rgba(255, 255, 255, 0) 22%, 
-        rgba(255, 255, 255, 0.90) 30%);
+    padding: 1rem 10%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 80px;  /* Fixed height for header */
 }
 
 .logo {
-    display: none;
+    flex: 0 0 auto;
+}
+
+.logo h1 {
+    font-size: 2.6rem;
+    color: #92D36D;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(146, 211, 109, 0.3),
+                 -1px -1px 0 rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.5px;
+}
+
+.logo .tagline {
+    font-family: 'Segoe UI', 'Calibri', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #666;
+    margin: 0.2rem 0 0 0;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(102, 102, 102, 0.2);
 }
 
 .nav-links {
     display: flex;
     gap: 3rem;
-    padding-right: 2rem;
+    margin-left: auto;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #92d36d;
+    color: #333;
     font-weight: 500;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -49,49 +69,91 @@ body {
 }
 
 .nav-links a:hover {
-    color: #7ab558;
+    color: #96B69D;
 }
 
 /* Hero Image Section */
 .hero-image {
-    height: 70vh;
     width: 100%;
-    background-image: url('../images/hero3.JPG');
-    background-size: contain;
-    background-position: center;
+    height: 60vh;  /* Increased height */
+    background-image: url('/images/hero4.jpeg');
+    background-size: cover;
+    background-position: center 20%;  /* Adjusted to show more of the top of the image */
     background-repeat: no-repeat;
     position: relative;
-    margin-top: 0;
+    margin: 0;
+    padding-top: 80px;  /* Match header height */
+    margin-top: 80px;  /* Add margin to push content below fixed header */
 }
 
 .hero-content {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Introduction Section */
 .introduction {
-    padding: 4rem 10% 4rem;
-    text-align: center;
+    padding: 3rem 10%;
+    margin: 0;
     background-color: #f8f9fa;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: -2rem;
 }
 
 .introduction h2 {
-    font-size: 2.8rem;
-    color: #92d36d;
-    margin-bottom: 1.5rem;
+    font-family: 'Segoe UI', 'Palatino', 'Georgia', serif;
+    font-style: italic;
     font-weight: 600;
+    color: #92D36D;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(146, 211, 109, 0.2);
 }
 
 .introduction p {
-    font-size: 1.4rem;
-    color: #92d36d;
+    font-family: 'Segoe UI', 'Palatino', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #4a5568;
     max-width: 800px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+}
+
+/* Section Styles */
+section:not(.hero-image):not(.introduction) {
+    padding: 5rem 10%;
+    margin: 0;  /* Remove default margin */
+}
+
+section h2 {
+    color: #92D36D;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(146, 211, 109, 0.2);
 }
 
 /* Services Section */
@@ -102,9 +164,95 @@ body {
 
 .services h2 {
     font-size: 2.2rem;
-    color: #92d36d;
+    color: #92D36D;
     text-align: center;
     margin-bottom: 3rem;
+    text-shadow: 1px 1px 2px rgba(146, 211, 109, 0.2);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3 {
+    color: #96B69D;
+    margin-bottom: 1rem;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+/* About Section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.about-content p {
+    font-family: 'Segoe UI', 'Palatino', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: center;
+    padding: 1rem 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+/* Contact Section */
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
 }
 
 /* Footer */
@@ -118,12 +266,6 @@ footer {
 .contact-info h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #ffffff;
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
     color: #ffffff;
 }
 
@@ -160,4 +302,86 @@ footer {
     .introduction p {
         font-size: 1.2rem;
     }
+
+    section {
+        padding: 3rem 5%;
+    }
+    
+    section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for navigation */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #96B69D;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Add smooth transition to sections */
+section {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(150, 182, 157, 0.2);
+}
+
+.portfolio-item h3 {
+    color: #96B69D;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.portfolio-item p {
+    color: #4a5568;
+    line-height: 1.6;
 } 
