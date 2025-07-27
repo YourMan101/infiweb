@@ -27,6 +27,32 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Modal functionality for "More"
+document.addEventListener('DOMContentLoaded', function() {
+    const moreBtn = document.getElementById('more-btn');
+    const modal = document.getElementById('more-modal');
+    const closeModal = document.getElementById('close-modal');
+    const modalText = document.getElementById('modal-text');
+
+    if (moreBtn && modal && closeModal) {
+        moreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+            // You can set modalText.innerHTML here if you want dynamic content
+        });
+
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Optional: close modal when clicking outside the modal content
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+});
 // Add fade-in animation to sections
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section, header');

@@ -11,7 +11,90 @@ body {
     color: #333;
     background-color: #ffffff;
 }
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.7em;
+}
 
+/* Center the dropdown content */
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1001;
+    left: 50%; /*center horizontally*/
+    transform: translateX(-50%); /* Offset by half width to center */
+    top: 100%; /*position below the dropdown toggle*/
+    margin-top: 5px; /* Small gap from the button */
+}
+
+/* Optional: Add a small arrow pointing up */
+.dropdown-content::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+
+    
+    /*Modal styles*/
+#more-modal{
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0.0.0,3);
+    justify-content: center;
+    align-items: center;
+}
+#more-modal .modal-content{
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    position: relative;
+}
+#more-modal .close-modal{
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #96B96D;
+    border: none;
+    background: none;
+}
 /* Navigation */
 .main-nav {
     display: flex;
@@ -25,6 +108,15 @@ body {
     top: 0;
     z-index: 1000;
     height: 80px;  /* Fixed height for header */
+}
+
+.logo a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover{
+    color: inherit;
 }
 
 .logo {
@@ -43,13 +135,23 @@ body {
 }
 
 .logo .tagline {
-    font-family: 'Segoe UI', 'Calibri', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-style: italic;
     font-size: 1rem;
     color: #666;
     margin: 0.2rem 0 0 0;
     letter-spacing: 0.5px;
     text-shadow: 1px 1px 2px rgba(102, 102, 102, 0.2);
+}
+
+.logo-link:hover {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.logo-link:hover {
+    color: inherit;
 }
 
 .nav-links {
@@ -120,7 +222,7 @@ body {
 }
 
 .introduction h2 {
-    font-family: 'Segoe UI', 'Palatino', 'Georgia', serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-style: italic;
     font-weight: 600;
     color: #92D36D;
@@ -130,11 +232,11 @@ body {
 }
 
 .introduction p {
-    font-family: 'Segoe UI', 'Palatino', 'Georgia', serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-style: italic;
     font-weight: 600;
     font-size: 1.3rem;
-    color: #4a5568;
+    color: #92D36D;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
@@ -208,6 +310,13 @@ section h2 {
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
+.project-item h3 {
+    color: #96B69D;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
 /* About Section */
 .about-content {
     max-width: 800px;
@@ -217,15 +326,21 @@ section h2 {
 }
 
 .about-content p {
-    font-family: 'Segoe UI', 'Palatino', 'Georgia', serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-style: italic;
     font-weight: 600;
-    color: #4a5568;
+    color: #96B69D;
     font-size: 1.3rem;
     line-height: 1.8;
     text-align: center;
     padding: 1rem 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #96B69D;
 }
 
 /* Team Section */
@@ -241,6 +356,23 @@ section h2 {
     background: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.team-member h3 {
+    color: #96B69D;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.team-photo {
+    width: 140px;         /* You can adjust this size */
+    height: 140px;        /* You can adjust this size */
+    object-fit: cover;    /* Ensures the image fills the box and keeps aspect ratio */
+    border-radius: 16px;  /* Rounded corners */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    background: #fff;
+    display: block;
 }
 
 /* Contact Section */
@@ -384,4 +516,13 @@ section {
 .portfolio-item p {
     color: #4a5568;
     line-height: 1.6;
+} 
+
+.section-gap {
+    margin-bottom: 2.5rem; /* Adjust the value for more or less space */
+}
+
+.about h3 {
+    margin-top: 2.5rem;   /* Adds space above each h3 */
+    margin-bottom: 0.5rem; /* Keeps heading close to its paragraph */
 } 

@@ -10,13 +10,18 @@
     <!-- Navigation and navigation links -->
      <nav class="main-nav">
         <div class="logo">
-            <h1>Infinity Mätkonsult AB</h1>
+            <a href="/" class="logo-link"><h1>Infinity Mätkonsult AB</h1></a>
             <p class="tagline">Your trusted partner in surveying</p>
         </div>
         <div class="nav-links">
             <a href="#services">Services</a>
             <a href="#projects">Projects</a>
-            <a href="#about">About</a>
+            <div class="dropdown">
+                <a href="#about" class="dropdown-toggle">About</a>
+                <div class="dropdown-content">
+                  <a href="/more.html">More</a>
+                </div>
+              </div>
             <a href="#team">Team</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
@@ -34,21 +39,29 @@
      </header>
 
      <!-- Services section -->
-      <section id="services" class="services">
+     <section id="services" class="services">
         <h2>Our Services</h2>
         <div class="services-grid">
-            <div class="service-item">
-                <h3>Surveying</h3>
-                <p>Professional surveying services with high precision and reliability.</p>
-            </div>
-            <div class="service-item">
-                <h3>3D Scanning</h3>
-                <p>Advanced 3D scanning for detailed digital representations.</p>
-            </div>
-            <div class="service-item">
-                <h3>Consulting</h3>
-                <p>Expert advice and consulting for your measurement needs.</p>
-            </div>
+          <div class="service-item">
+            <h3>Network Measurements</h3>
+            <p>High-precision network measurements for reliable project foundations.</p>
+          </div>
+          <div class="service-item">
+            <h3>Quantities Calculation</h3>
+            <p>Accurate calculation of quantities for efficient project planning and execution.</p>
+          </div>
+          <div class="service-item">
+            <h3>Drone Flights</h3>
+            <p>Advanced drone surveys for aerial mapping and site analysis.</p>
+          </div>
+          <div class="service-item">
+            <h3>Daily Progress Measurements</h3>
+            <p>Daily tracking and reporting of project progress for optimal workflow.</p>
+          </div>
+          <div class="service-item">
+            <h3>Final Documentation</h3>
+            <p>Comprehensive final documentation to ensure project completion and compliance.</p>
+          </div>
         </div>
       </section>
 
@@ -57,12 +70,12 @@
         <h2>Our Projects</h2>
         <div class="projects-grid">
             <div class="project-item">
-                <h3>Infrastructure Projects</h3>
-                <p>Precision measurements for major infrastructure developments.</p>
+                <h3>Recent Project</h3>
+                <p>E4 Förbifart FSE 215. Year 2019-2023</p>
             </div>
             <div class="project-item">
-                <h3>Building Construction</h3>
-                <p>Accurate surveying for construction projects.</p>
+                <h3>Current Project</h3>
+                <p>E4 Förbifart FSE 101</p>
             </div>
         </div>
       </section>
@@ -71,7 +84,9 @@
       <section id="about" class="about">
         <h2>About Us</h2>
         <div class="about-content">
-            <p>Infinity Mätkonsult AB is your trusted partner in surveying and measurement solutions. With our expertise and commitment to precision, we deliver reliable results for all your surveying needs.</p>
+            <p>Founded in 2022, Infinity Mätkonsult AB is a consultancy firm specializing in advanced surveying solutions for infrastructure projects.</p>
+            <p>Our team consists of experts with over a decade of experience in various fields, providing a wealth of knowledge, values, and technical proficiency to every project.</p>
+            <p>We uphold the highest standards of accuracy and efficiency in the construction and development of infrastructure.</p>
         </div>
       </section>
 
@@ -80,12 +95,13 @@
         <h2>Our Team</h2>
         <div class="team-grid">
             <div class="team-member">
-                <h3>Leadership</h3>
-                <p>Experienced professionals leading with expertise and innovation.</p>
+                <img src="/images/team1.png" alt="Team Member 1" class="team-photo">
             </div>
             <div class="team-member">
-                <h3>Surveyors</h3>
-                <p>Skilled surveyors with extensive field experience.</p>
+                <img src="/images/team2.png" alt="Team Member 2" class="team-photo">
+            </div>
+            <div class="team-member">
+                <img src="/images/team3.png" alt="Team Member 3" class="team-photo">
             </div>
         </div>
       </section>
@@ -118,6 +134,16 @@
             <p>LinkedIn: <a href="https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/" target="_blank">Infinity Mätkonsult AB</a></p>
         </div>
       </footer>
+   
+    <div id="more-modal">
+      <div class="modal-content">
+        <button class="close-modal" id="close-modal">&times;</button>
+        <div id="modal-text">
+          <!-- Your custom text will go here -->
+          <p>Loading...</p>
+        </div>
+      </div>
+    </div>
     <script src="/js/main.js"></script>
 </body>
     </html>
