@@ -345,9 +345,39 @@ section h2 {
 
 /* Team Section */
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.team-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.team-row.top-row {
+    justify-content: center;
+    max-width: 800px;
+    gap: 4rem;
+    flex-direction: row;
+}
+
+.team-row.bottom-row {
+    justify-content: center;
+    max-width: 1000px;
+    gap: 3rem;
+    flex-direction: row;
+}
+
+.team-member {
+    flex: 0 0 auto;
+    min-width: 250px;
+    max-width: 300px;
 }
 
 .team-member {
@@ -756,6 +786,26 @@ section {
     
     .project-section {
         padding: 1rem;
+    }
+    
+    /* Team section responsive */
+    .team-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .team-row.top-row,
+    .team-row.bottom-row {
+        max-width: 100%;
+        gap: 2rem;
+        flex-direction: column;
+    }
+    
+    .team-member {
+        min-width: auto;
+        max-width: 100%;
     }
 }
 
