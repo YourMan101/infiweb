@@ -38,29 +38,49 @@
         <p>To your trusted partner in surveying and measurement solutions</p>
      </header>
 
-     <!-- Services section -->
-     <section id="services" class="services">
+           <!-- Services section -->
+      <section id="services" class="services">
         <h2>Our Services</h2>
         <div class="services-grid">
           <div class="service-item">
+            <h3>Data Extract from Design and Models</h3>
+            <p>Extracting precise data from design specifications and 3D models for accurate project implementation.</p>
+          </div>
+          <div class="service-item">
+            <h3>Setting Out Data</h3>
+            <p>Setting out data from design specifications for precise construction layout and positioning.</p>
+          </div>
+          <div class="service-item">
+            <h3>As-Built Measurements</h3>
+            <p>Data measurements for as-built drawings to ensure accuracy and compliance with design specifications.</p>
+          </div>
+          <div class="service-item">
             <h3>Network Measurements</h3>
-            <p>High-precision network measurements for reliable project foundations.</p>
+            <p>Network measurements and maintenance for reliable project foundations and ongoing monitoring.</p>
+          </div>
+          <div class="service-item">
+            <h3>Control Measurements</h3>
+            <p>Control measurements for settlement monitoring to track structural integrity and ground movement.</p>
+          </div>
+          <div class="service-item">
+            <h3>3D Modeling for Machine Control</h3>
+            <p>Advanced 3D modeling for machine control operations ensuring precision in automated construction processes.</p>
           </div>
           <div class="service-item">
             <h3>Quantities Calculation</h3>
-            <p>Accurate calculation of quantities for efficient project planning and execution.</p>
+            <p>Quantities calculation based on as-built and design measurements according to AMA 10 & MER 13 standards.</p>
           </div>
           <div class="service-item">
-            <h3>Drone Flights</h3>
-            <p>Advanced drone surveys for aerial mapping and site analysis.</p>
+            <h3>Drone Technology</h3>
+            <p>Orthophoto maps and photos using drone technology for comprehensive aerial surveying and documentation.</p>
           </div>
           <div class="service-item">
-            <h3>Daily Progress Measurements</h3>
-            <p>Daily tracking and reporting of project progress for optimal workflow.</p>
+            <h3>Stock Pile Volumes</h3>
+            <p>Quantities estimation based on drone flights for accurate stock pile volume calculations and monitoring.</p>
           </div>
           <div class="service-item">
-            <h3>Final Documentation</h3>
-            <p>Comprehensive final documentation to ensure project completion and compliance.</p>
+            <h3>Documentation & Payment Certificates</h3>
+            <p>Comprehensive documentation and monthly payment certificates works for project management and financial tracking.</p>
           </div>
         </div>
       </section>
@@ -69,13 +89,15 @@
       <section id="projects" class="projects">
         <h2>Our Projects</h2>
         <div class="projects-grid">
-            <div class="project-item">
+            <div class="project-item" onclick="window.location.href='/project-fse215.html'" style="cursor: pointer;">
                 <h3>Recent Project</h3>
                 <p>E4 Förbifart FSE 215. Year 2019-2023</p>
+                <p style="color: #96B69D; font-size: 0.9rem; margin-top: 0.5rem;">Click to view details →</p>
             </div>
-            <div class="project-item">
+            <div class="project-item" onclick="window.location.href='/project-fse101.html'" style="cursor: pointer;">
                 <h3>Current Project</h3>
                 <p>E4 Förbifart FSE 101</p>
+                <p style="color: #96B69D; font-size: 0.9rem; margin-top: 0.5rem;">Click to view details →</p>
             </div>
         </div>
       </section>
@@ -94,17 +116,38 @@
       <section id="team" class="team">
         <h2>Our Team</h2>
         <div class="team-grid">
-            <div class="team-member">
-                <img src="/images/team1.png" alt="Team Member 1" class="team-photo">
+            <div class="team-member" onclick="openTeamModal('andrei')">
+                <img src="/images/team1.png" alt="Andrei Bob" class="team-photo">
+                <h3>Andrei Bob</h3>
+                <p>CHIEF SURVEYOR, EXCEL WIZARD, QUANTITY SURVEYOR, CO-FOUNDER INFINITY</p>
             </div>
-            <div class="team-member">
-                <img src="/images/team2.png" alt="Team Member 2" class="team-photo">
+            <div class="team-member" onclick="openTeamModal('cristian')">
+                <img src="/images/team2.png" alt="Cristian Dan" class="team-photo">
+                <h3>Cristian Dan</h3>
+                <p>SENIOR SURVEYOR, CO-FOUNDER INFINITY</p>
             </div>
-            <div class="team-member">
-                <img src="/images/team3.png" alt="Team Member 3" class="team-photo">
+            <div class="team-member" onclick="openTeamModal('chakad')">
+                <img src="/images/team3.png" alt="Chakad Bozorgmher" class="team-photo">
+                <h3>Chakad Bozorgmher</h3>
+                <p>BIM & CAD EXPERT</p>
+            </div>
+            <div class="team-member" onclick="openTeamModal('gabriel')">
+                <img src="/images/team4.png" alt="Gabriel Cabrera" class="team-photo">
+                <h3>Gabriel Cabrera</h3>
+                <p>LAND SURVEYOR</p>
             </div>
         </div>
       </section>
+
+      <!-- Team Member Modal -->
+      <div id="team-modal" class="team-modal">
+        <div class="team-modal-content">
+          <span class="close-team-modal">&times;</span>
+          <div id="team-modal-body">
+            <!-- Content will be loaded here -->
+          </div>
+        </div>
+      </div>
 
       <!-- Portfolio section -->
       <section id="portfolio" class="portfolio">
