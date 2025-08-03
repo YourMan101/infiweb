@@ -150,10 +150,6 @@ body {
     display: inline-block;
 }
 
-.logo-link:hover {
-    color: inherit;
-}
-
 .nav-links {
     display: flex;
     gap: 3rem;
@@ -375,12 +371,6 @@ section h2 {
 }
 
 .team-member {
-    flex: 0 0 auto;
-    min-width: 250px;
-    max-width: 300px;
-}
-
-.team-member {
     text-align: center;
     padding: 2rem;
     background: #f8f9fa;
@@ -388,6 +378,9 @@ section h2 {
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto;
+    min-width: 250px;
+    max-width: 300px;
 }
 
 .team-member:hover {
