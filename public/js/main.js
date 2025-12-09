@@ -147,6 +147,12 @@ function openTeamModal(memberId) {
         
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        // Reset scroll position to top
+        const modalContent = document.querySelector('.team-modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     }
 }
 
