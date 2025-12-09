@@ -549,29 +549,112 @@ footer {
         padding: 1rem 5%;
     }
 
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo .tagline {
+        font-size: 0.85rem;
+    }
+
     .nav-links {
         margin-top: 1rem;
-        gap: 1.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+
+    .hero-image {
+        height: 40vh;
+        margin-top: 120px;
+        padding-top: 0;
     }
 
     .introduction {
-        padding-top: 12rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 
     .introduction h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .introduction p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     section {
-        padding: 3rem 5%;
+        padding: 2rem 5%;
     }
     
     section h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .team-modal-content {
+        width: 95%;
+        padding: 2rem 1.5rem;
+        max-height: 90vh;
+    }
+
+    .team-modal-header img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .team-modal-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .hero-image {
+        height: 35vh;
+        margin-top: 140px;
+    }
+
+    section {
+        padding: 1.5rem 3%;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+
+    .team-member {
+        min-width: auto;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .team-photo {
+        width: 120px;
+        height: 120px;
     }
 }
 
