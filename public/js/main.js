@@ -101,24 +101,6 @@ const teamMembers = {
         experience: "Unwavering dedication to work and precision.",
         languages: "Swedish, English, Spanish.",
         projects: "Handles land surveying for various infrastructure and development projects."
-    },
-    alexander: {
-        name: "Alexander Tounousidis",
-        role: "LAND SURVEYOR",
-        image: "/images/team5.png",
-        bio: "Dedicated Land Surveyor with strong engagement and eagerness to learn. Brings a mature, responsible mindset to all projects.",
-        expertise: [
-            "Daily measurements and setting out data",
-            "As-built surveys and documentation",
-            "3D models and survey points coordination",
-            "Field operations and site work",
-            "Office team coordination",
-            "Hands-on approach with attention to detail"
-        ],
-        qualifications: "Alexander is a dedicated Land Surveyor who brings strong engagement, eagerness to learn, and a mature, responsible mindset. He adapts well to new challenges and contributes positively to both field operations and coordination with the office team.",
-        experience: "Alexander takes care of daily measurements, setting out data, and as-built surveys. He is also responsible for sending 3D models and survey points to the office, supporting accurate and efficient project documentation. His hands-on approach and attention to detail make him a valuable asset on site.",
-        languages: "Swedish, English, Greek.",
-        projects: "Handles daily surveying operations and coordinates with office teams for project documentation."
     }
 };
 
