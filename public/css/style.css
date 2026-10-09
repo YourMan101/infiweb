@@ -404,10 +404,6 @@ section h2 {
     flex-direction: row;
 }
 
-.team-row.third-row {
-    max-width: 300px;
-}
-
 .team-member {
     text-align: center;
     padding: 2rem;
