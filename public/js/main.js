@@ -103,7 +103,7 @@ const teamMembers = {
         projects: "Handles land surveying for various infrastructure and development projects."
     },
     georgios: {
-        name: "Georgios",
+        name: "Georgios Salamouras",
         role: "LAND SURVEYOR",
         image: "/images/Georgios.jpeg",
         bio: "University-educated surveyor with a strong academic foundation and a thoughtful, analytical approach to surveying. Combines this background with careful fieldwork and attention to detail to support accurate, reliable results on infrastructure projects.",
