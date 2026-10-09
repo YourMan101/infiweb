@@ -187,75 +187,78 @@ body {
 /* Hero Image Section */
 .hero-image {
     width: 100%;
-    height: 60vh;  /* Increased height */
+    min-height: 480px;
+    height: 68vh;
+    max-height: 760px;
     background-image: url('/images/hero4.jpeg');
     background-size: cover;
     background-position: center 20%;  /* Adjusted to show more of the top of the image */
     background-repeat: no-repeat;
     position: relative;
     margin: 0;
-    padding-top: 80px;  /* Match header height */
     margin-top: 80px;  /* Add margin to push content below fixed header */
+    display: flex;
+    align-items: center;
+    padding: 3rem 10%;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.78) 0%, rgba(15, 23, 42, 0.52) 55%, rgba(15, 23, 42, 0.2) 100%);
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    width: 80%;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 820px;
+    color: #fff;
 }
 
 .hero-content h2 {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.12;
+    margin-bottom: 1rem;
+    text-align: left;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Introduction Section */
-.introduction {
-    padding: 3rem 10%;
-    margin: 0;
-    background-color: #f8f9fa;
-    text-align: center;
-    position: relative;
-    top: -2rem;
-}
-
-.introduction h2 {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 600;
-    color: #92D36D;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 2px rgba(146, 211, 109, 0.2);
-}
-
-.introduction p {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.3rem;
-    color: #92D36D;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 620px;
+    margin-bottom: 1.75rem;
+    color: #fff;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border-radius: 6px;
+    background: var(--color-green);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-button:hover {
+    background: var(--color-green-hover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.hero-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
 }
 
 /* Section Styles */
-section:not(.hero-image):not(.introduction) {
+section:not(.hero-image) {
     padding: 5rem 10%;
     margin: 0;  /* Remove default margin */
 }
@@ -578,22 +581,10 @@ footer {
     }
 
     .hero-image {
-        height: 40vh;
+        min-height: 420px;
+        height: 55vh;
         margin-top: 120px;
-        padding-top: 0;
-    }
-
-    .introduction {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-
-    .introduction h2 {
-        font-size: 1.8rem;
-    }
-
-    .introduction p {
-        font-size: 1.1rem;
+        padding: 2.5rem 6%;
     }
 
     section {
@@ -642,7 +633,8 @@ footer {
     }
 
     .hero-image {
-        height: 35vh;
+        min-height: 380px;
+        height: 50vh;
         margin-top: 140px;
     }
 
@@ -1259,8 +1251,7 @@ section {
 .about h2,
 .team h2,
 .portfolio h2,
-.contact-form-section h2,
-.introduction h2 {
+.contact-form-section h2 {
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -1272,8 +1263,7 @@ section {
     .about h2::after,
     .team h2::after,
     .portfolio h2::after,
-    .contact-form-section h2::after,
-    .introduction h2::after {
+    .contact-form-section h2::after {
         height: 2px;
         bottom: -6px;
     }
@@ -1296,8 +1286,6 @@ body {
     background-color: var(--color-green);
 }
 
-.introduction h2,
-.introduction p,
 section h2,
 .services h2,
 .service-item h3,
@@ -1369,5 +1357,10 @@ footer {
 }
 
 footer .contact-info h3 {
+    color: #fff;
+}
+
+.hero-content h2,
+.hero-content p {
     color: #fff;
 }
