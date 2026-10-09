@@ -45,7 +45,7 @@ const teamMembers = {
         qualifications: "Behorighetstyp I certified professional with authority in surveying standards. Andrei's technical expertise, Excel mastery, and strategic leadership drive our surveying operations.",
         experience: "10+ years in Romania, 5 years in Trafikverket projects in Sweden.",
         languages: "Romanian, English, Swedish.",
-        projects: "Led major projects including E4 Förbifart FSE 215 and current E4 Förbifart FSE 101."
+        projects: "Recent projects include E4 Förbifart FSE 215 and E4 Förbifart FSE 101."
     },
     cristian: {
         name: "Cristian Dan",
