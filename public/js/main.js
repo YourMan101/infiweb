@@ -49,7 +49,7 @@ const teamMembers = {
     },
     cristian: {
         name: "Cristian Dan",
-        role: "SENIOR SURVEYOR, CO-FOUNDER INFINITY",
+        role: "SENIOR SURVEYOR & CO-FOUNDER",
         image: "/images/team2.png",
         bio: "Senior surveyor with deep expertise in advanced surveying techniques and project management. Co-founder ensuring highest standards of accuracy and efficiency.",
         expertise: [
