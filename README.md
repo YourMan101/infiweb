@@ -1,185 +1,144 @@
 # Infinity Mätkonsult AB Website
 
-A professional, responsive website for Infinity Mätkonsult AB - a leading surveying consultancy firm specializing in advanced surveying solutions for infrastructure projects.
+This repository contains the source code for [infinitymk.se](https://www.infinitymk.se/). The code is stored on GitHub, and the live website is hosted on Vercel.
 
-## 🌟 Features
+## Working on the website from another computer
 
-### **Interactive Team Profiles**
-- **Detailed team member modals** with comprehensive information
-- **Professional qualifications** and experience details
-- **Multi-language capabilities** for each team member
-- **Responsive design** for all devices
+You can work from any computer with internet access. The important thing is to get the project from GitHub rather than copying it from an old computer. GitHub is the shared, saved copy of the project.
 
-### **Project Showcases**
-- **Detailed project pages** with comprehensive information
-- **Interactive project cards** with click-to-view functionality
-- **Quantities and specifications** for each project
-- **Services provided** documentation
+### One-time setup on a new computer
 
-### **Professional Services**
-- **10 comprehensive services** with detailed descriptions
-- **Technical standards** compliance (AMA 10 & MER 13)
-- **Modern surveying techniques** including drone technology
-- **BIM and CAD expertise** documentation
+1. Install [Git for Windows](https://git-scm.com/download/win) and [Node.js](https://nodejs.org/) (use a current LTS version).
+2. Sign in to GitHub with an account that has access to `YourMan101/infiweb`.
+3. Open Git Bash, choose a folder where you want to keep the project, and clone it:
 
-### **Responsive Design**
-- **Mobile-first approach** with responsive layout
-- **Cross-browser compatibility** (Chrome, Safari, Firefox, Edge)
-- **Modern CSS Grid and Flexbox** layouts
-- **Smooth animations** and transitions
-
-## 🚀 Quick Start
-
-### **Prerequisites**
-- Node.js (version 14 or higher)
-- npm (comes with Node.js)
-
-### **Installation**
-1. **Clone the repository**
    ```bash
+   cd ~/Documents
    git clone https://github.com/YourMan101/infiweb.git
    cd infiweb
    ```
 
-2. **Install dependencies**
+4. Install the project dependencies:
+
    ```bash
    npm install
    ```
 
-3. **Start the development server**
+   You only need to do this once per computer, or again if the project's dependencies change.
+
+5. (Optional) Open the folder in Visual Studio Code:
+
    ```bash
-   npm start
-   # or
-   node server.js
+   code .
    ```
 
-4. **Open your browser**
-   - Navigate to `http://localhost:3000`
-   - The website will be live and ready to use
+### Preview the website on your computer
 
-## 📁 Project Structure
+From the project folder in Git Bash, start the local server:
 
-```
-infiweb/
-├── public/
-│   ├── css/
-│   │   └── style.css          # Main stylesheet
-│   ├── js/
-│   │   └── main.js           # JavaScript functionality
-│   ├── images/
-│   │   ├── team1.png         # Team member photos
-│   │   ├── team2.png
-│   │   ├── team3.png
-│   │   ├── team4.png
-│   │   ├── team5.png
-│   │   └── hero4.jpeg        # Hero image
-│   ├── index.html            # Main homepage
-│   ├── more.html             # About & Philosophy page
-│   ├── project-fse215.html   # E4 Förbifart FSE 215 project
-│   └── project-fse101.html   # E4 Förbifart FSE 101 project
-├── server.js                 # Express.js server
-├── package.json              # Project dependencies
-└── README.md                 # This file
-```
-
-## 👥 Team Members
-
-### **Leadership**
-- **Andrei Bob** - Chief Surveyor, Excel Wizard, Quantity Surveyor, Co-founder
-- **Cristian Dan** - Senior Surveyor, Co-founder
-
-### **Specialists**
-- **Chakad Bozorgmher** - BIM & CAD Expert
-- **Gabriel Cabrera** - Land Surveyor
-- **Alexander Tounousidis** - Land Surveyor
-
-## 🛠️ Technologies Used
-
-### **Frontend**
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with Grid and Flexbox
-- **JavaScript (ES6+)** - Interactive functionality
-- **Responsive Design** - Mobile-first approach
-
-### **Backend**
-- **Node.js** - Server runtime
-- **Express.js** - Web framework
-- **Static file serving** - Efficient content delivery
-
-### **Development**
-- **Git** - Version control
-- **npm** - Package management
-- **Modern web standards** - Best practices
-
-## 🎨 Design Features
-
-### **Color Scheme**
-- **Primary Green**: #92D36D (Infinity brand color)
-- **Secondary Green**: #96B69D (accent color)
-- **Professional grays** and whites for content
-
-### **Typography**
-- **Segoe UI** - Clean, professional font
-- **Responsive sizing** for all screen sizes
-- **Proper hierarchy** with headings and body text
-
-### **Interactive Elements**
-- **Hover effects** on buttons and cards
-- **Smooth transitions** for better UX
-- **Modal dialogs** for detailed information
-- **Smooth scrolling** navigation
-
-## 📱 Responsive Design
-
-The website is fully responsive and optimized for:
-- **Desktop computers** (1920px and above)
-- **Laptops** (1366px - 1920px)
-- **Tablets** (768px - 1366px)
-- **Mobile phones** (320px - 768px)
-
-## 🚀 Deployment
-
-### **Local Development**
 ```bash
 npm start
-# Server runs on http://localhost:3000
 ```
 
-### **Production Deployment**
-The website is ready for deployment on:
-- **Vercel** (recommended)
-- **Netlify**
-- **Heroku**
-- **GitHub Pages**
+Open <http://localhost:3000> in your browser. This preview is only on your computer; it does not change the live website. Keep the terminal open while previewing. Press `Ctrl+C` in that terminal when you are finished.
 
-## 📞 Contact Information
+### Make and publish a change
 
-**Infinity Mätkonsult AB**
-- **Email**: infinity.matkonsult@gmail.com
-- **Phone**: +46768969580 / +46768969591
-- **LinkedIn**: [Infinity Mätkonsult AB](https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/)
+1. Before editing, get any work that may have been pushed from another computer:
 
-## 🏗️ Services Offered
+   ```bash
+   git pull origin main
+   ```
 
-1. **Data Extract from Design and Models**
-2. **Setting Out Data**
-3. **As-Built Measurements**
-4. **Network Measurements**
-5. **Control Measurements**
-6. **3D Modeling for Machine Control**
-7. **Quantities Calculation** (AMA 10 & MER 13)
-8. **Drone Technology**
-9. **Stock Pile Volumes**
-10. **Documentation & Payment Certificates**
+2. Edit the relevant files and preview the site locally. Main content files are:
+   - `public/index.html` — homepage content and project cards
+   - `public/project-fse101.html` and `public/project-fse215.html` — project detail pages
+   - `public/css/style.css` — styling and responsive layout
+   - `public/js/main.js` — interactive features and team information
+   - Other pages and images are in `public/`
 
-## 📋 License
+3. Review which files changed:
 
-This project is proprietary to Infinity Mätkonsult AB.
+   ```bash
+   git status
+   git diff
+   ```
 
-## 🤝 Contributing
+4. Save the change to Git and send it to GitHub:
 
-This is a private project for Infinity Mätkonsult AB. For inquiries about the website or services, please contact the company directly.
+   ```bash
+   git add .
+   git commit -m "Describe the website change"
+   git push origin main
+   ```
 
----
+   Use a short commit message that describes what you changed. Git may ask you to sign in to GitHub in a browser.
 
-**Built with ❤️ for Infinity Mätkonsult AB** 
+5. Vercel is connected to this repository. A push to `main` should start a deployment automatically. Check the project's **Deployments** page in the [Vercel dashboard](https://vercel.com/dashboard) and wait for the newest deployment to complete successfully.
+6. Visit [infinitymk.se](https://www.infinitymk.se/) and verify the change. If the old version still appears, wait a few minutes and hard-refresh with `Ctrl+Shift+R`, or try a private/incognito window.
+
+The local preview, GitHub, and the live website are separate:
+
+- **Local preview:** your current working files on your computer.
+- **GitHub:** the shared project history and source code.
+- **Live website:** the version deployed by Vercel from GitHub.
+
+Saving a file or previewing locally does not publish it. The normal publishing steps are commit, push, then confirm the Vercel deployment.
+
+## Helpful Git commands
+
+Run these from inside the `infiweb` folder:
+
+```bash
+git status                 # See which files have changed
+git pull origin main       # Get the latest work from GitHub
+git diff                   # Review local edits
+git add .                  # Stage changes for the next commit
+git commit -m "Message"    # Save a version locally
+git push origin main       # Send commits to GitHub
+```
+
+If Git says there are conflicts when pulling, stop before making more edits. The conflicting files need to be reconciled rather than overwritten. Do not use `git reset --hard` or discard files to try to fix this.
+
+## Project structure
+
+```text
+infiweb/
+├── public/
+│   ├── css/style.css
+│   ├── js/main.js
+│   ├── images/
+│   ├── index.html
+│   ├── more.html
+│   ├── contact.html
+│   ├── project-fse101.html
+│   └── project-fse215.html
+├── server.js
+├── package.json
+└── README.md
+```
+
+## Important reminders
+
+- Make sure `git status` is clean after pushing. Changes that exist only on one computer are not available on another computer.
+- Do not commit passwords, access tokens, private customer information, or other secrets.
+- Do not add the `node_modules` folder to Git; `npm install` recreates it from the package files.
+- Keep access to the GitHub account that can write to `YourMan101/infiweb`. Vercel dashboard access may also be needed to inspect deployment settings or troubleshoot a failed deployment.
+- The public website domain is `https://www.infinitymk.se/`. Do not change domain or project settings in Vercel unless you intend to change how the live site is hosted.
+
+## Technologies
+
+- HTML, CSS, and JavaScript
+- Node.js and Express for local development
+- GitHub for source control
+- Vercel for hosting and deployment
+
+## Contact
+
+Infinity Mätkonsult AB
+
+Email: infinity.matkonsult@gmail.com
+
+Phone: +46768969580 / +46768969591
+
+[LinkedIn](https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/)
