@@ -31,7 +31,7 @@ const observer = new IntersectionObserver((entries) => {
 const teamMembers = {
     andrei: {
         name: "Andrei Bob",
-        role: "CHIEF SURVEYOR, EXCEL WIZARD, QUANTITY SURVEYOR, CO-FOUNDER INFINITY",
+        role: "Chief Surveyor & Co-founder",
         image: "/images/team1.png",
         bio: "Seasoned professional with extensive experience in surveying and quantity calculations. Co-founder bringing over a decade of expertise in infrastructure projects.",
         expertise: [
