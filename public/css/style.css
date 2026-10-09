@@ -304,17 +304,34 @@ section h2 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .service-item {
+    display: grid;
+    grid-template-rows: 2.75rem minmax(3.5rem, auto) 1fr;
+    align-content: start;
     background: #f8f9fa;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+}
+
+.service-item:last-child {
+    grid-column: 2;
+}
+
+.service-icon {
+    width: 2rem;
+    height: 2rem;
+    fill: none;
+    stroke: var(--color-green);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .service-item:hover {
@@ -323,7 +340,13 @@ section h2 {
 
 .service-item h3 {
     color: #96B69D;
-    margin-bottom: 1rem;
+    align-self: center;
+    margin: 0;
+    line-height: 1.35;
+}
+
+.service-item p {
+    margin-top: 1rem;
 }
 
 /* Projects Section */
@@ -617,7 +640,6 @@ footer {
         font-size: 1.6rem;
     }
 
-    .services-grid,
     .projects-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -637,6 +659,16 @@ footer {
 
     .team-modal-header h2 {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-item:last-child {
+        grid-column: auto;
     }
 }
 
@@ -663,6 +695,10 @@ footer {
         min-height: 380px;
         height: 50vh;
         margin-top: 140px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 
     section {
