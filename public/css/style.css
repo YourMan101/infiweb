@@ -1,4 +1,12 @@
 /* Reset and base styles */
+:root {
+    --color-text: #1f2a37;
+    --color-heading: #1f2a37;
+    --color-green: #2f7d32;
+    --color-green-hover: #256629;
+    --color-green-soft: #eaf4e9;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -1269,4 +1277,97 @@ section {
         height: 2px;
         bottom: -6px;
     }
-} 
+
+}
+
+/* High-contrast brand colors */
+body {
+    color: var(--color-text);
+}
+
+.logo h1 {
+    color: var(--color-green);
+    text-shadow: none;
+}
+
+.nav-links a:hover,
+.nav-links a::after {
+    color: var(--color-green);
+    background-color: var(--color-green);
+}
+
+.introduction h2,
+.introduction p,
+section h2,
+.services h2,
+.service-item h3,
+.project-item h3,
+.about-content p,
+.about h3,
+.team-member h3,
+.team-modal-header h2,
+.team-modal-body h3,
+.contact-info h3,
+.portfolio-item h3,
+.project-detail h2,
+.project-section h3,
+.contact-form-section h2,
+.contact-info-sidebar h3 {
+    color: var(--color-heading);
+    text-shadow: none;
+}
+
+.certification-note h3 {
+    color: var(--color-heading) !important;
+    text-shadow: none;
+}
+
+.team-modal-header .role,
+.project-year,
+.contact-item a,
+.contact-item-header a,
+.header-contact .contact-item-header a,
+.header-contact-left .contact-item-header a {
+    color: var(--color-green);
+}
+
+.contact-item a:hover,
+.contact-item-header a:hover,
+.header-contact .contact-item-header a:hover,
+.header-contact-left .contact-item-header a:hover {
+    color: var(--color-green-hover);
+}
+
+.quantity-item strong,
+.certification-note strong {
+    color: var(--color-green);
+}
+
+.header-contact,
+.header-contact-left {
+    background: var(--color-green-soft);
+    border-color: var(--color-green);
+}
+
+footer {
+    background-color: var(--color-heading);
+}
+
+.btn-back,
+.submit-btn {
+    background-color: var(--color-green);
+}
+
+.btn-back:hover,
+.submit-btn:hover {
+    background-color: var(--color-green-hover);
+}
+
+.close-team-modal,
+#more-modal .close-modal {
+    color: var(--color-green);
+}
+
+footer .contact-info h3 {
+    color: #fff;
+}
