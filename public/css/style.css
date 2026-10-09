@@ -625,6 +625,35 @@ footer {
     color: #e2e8f0;
 }
 
+.footer-contact-button {
+    display: inline-block;
+    margin: 0.75rem 0 1rem;
+    padding: 0.7rem 1.1rem;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    background: transparent;
+    color: #fff !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-contact-button:hover {
+    background: #fff;
+    color: var(--color-heading) !important;
+}
+
+.footer-contact-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+.contact-info .copyright {
+    margin: 1.5rem 0 0;
+    color: #e5e7eb;
+    font-size: 0.85rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-nav {
