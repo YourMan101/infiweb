@@ -32,7 +32,8 @@ body {
 }
 .dropdown-toggle::after {
     content: '▼';
-    font-size: 0.7em;
+    font-size: 0.55em;
+    margin-left: 0.4em;
 }
 
 /* Center the dropdown content */
@@ -137,6 +138,12 @@ body {
     flex: 0 0 auto;
 }
 
+.logo img {
+    display: block;
+    width: min(300px, 32vw);
+    height: auto;
+}
+
 .logo h1 {
     font-size: 2.6rem;
     color: #92D36D;
@@ -166,11 +173,20 @@ body {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 3rem;
     margin-left: auto;
 }
 
-.nav-links a {
+.nav-links .dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links > a,
+.nav-links > .dropdown > a {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     color: #333;
     font-weight: 500;
@@ -180,7 +196,8 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links > a:hover,
+.nav-links > .dropdown > a:hover {
     color: #96B69D;
 }
 
@@ -387,6 +404,10 @@ section h2 {
     flex-direction: row;
 }
 
+.team-row.third-row {
+    max-width: 300px;
+}
+
 .team-member {
     text-align: center;
     padding: 2rem;
@@ -564,6 +585,10 @@ footer {
         font-size: 1.8rem;
     }
 
+    .logo img {
+        width: min(280px, 80vw);
+    }
+
     .logo .tagline {
         font-size: 0.85rem;
     }
@@ -575,7 +600,8 @@ footer {
         justify-content: center;
     }
 
-    .nav-links a {
+    .nav-links > a,
+    .nav-links > .dropdown > a {
         font-size: 0.85rem;
         padding: 0.5rem;
     }
@@ -624,11 +650,16 @@ footer {
         font-size: 1.5rem;
     }
 
+    .logo img {
+        width: min(240px, 80vw);
+    }
+
     .nav-links {
         gap: 0.5rem;
     }
 
-    .nav-links a {
+    .nav-links > a,
+    .nav-links > .dropdown > a {
         font-size: 0.75rem;
     }
 
@@ -676,11 +707,13 @@ a, button {
 }
 
 /* Hover effects for navigation */
-.nav-links a {
+.nav-links > a,
+.nav-links > .dropdown > a {
     position: relative;
 }
 
-.nav-links a::after {
+.nav-links > a::before,
+.nav-links > .dropdown > a::before {
     content: '';
     position: absolute;
     width: 0;
@@ -691,7 +724,8 @@ a, button {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links > a:hover::before,
+.nav-links > .dropdown > a:hover::before {
     width: 100%;
 }
 
@@ -1096,155 +1130,6 @@ section {
     }
 } 
 
-/* Header Contact Information */
-.header-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-left: 2rem;
-    padding: 0.5rem 1rem;
-    background: rgba(146, 211, 109, 0.1);
-    border-radius: 8px;
-    border-left: 3px solid #92D36D;
-}
-
-.contact-item-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.contact-item-header strong {
-    color: #333;
-    font-weight: 600;
-    min-width: 50px;
-}
-
-.contact-item-header a {
-    color: #96B69D;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.85rem;
-}
-
-.contact-item-header a:hover {
-    color: #92D36D;
-}
-
-/* Header Contact Information - Left Position */
-.header-contact-left {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-right: 2rem;
-    padding: 0.5rem 1rem;
-    background: rgba(146, 211, 109, 0.1);
-    border-radius: 8px;
-    border-right: 3px solid #92D36D;
-    min-width: 200px;
-}
-
-.header-contact-left .contact-item-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-}
-
-.header-contact-left .contact-item-header strong {
-    color: #333;
-    font-weight: 600;
-    min-width: 45px;
-    font-size: 0.8rem;
-}
-
-.header-contact-left .contact-item-header a {
-    color: #96B69D;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.8rem;
-    word-break: break-word;
-}
-
-.header-contact-left .contact-item-header a:hover {
-    color: #92D36D;
-}
-
-/* Responsive adjustments for header contact */
-@media (max-width: 1200px) {
-    .header-contact {
-        margin-left: 1rem;
-        padding: 0.3rem 0.8rem;
-    }
-    
-    .contact-item-header {
-        font-size: 0.8rem;
-    }
-    
-    .contact-item-header a {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-nav {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-    
-    .header-contact {
-        margin-left: 0;
-        margin-top: 1rem;
-        order: 2;
-    }
-    
-    .nav-links {
-        order: 3;
-    }
-} 
-
-/* Responsive adjustments for left header contact */
-@media (max-width: 1200px) {
-    .header-contact-left {
-        margin-right: 1rem;
-        padding: 0.3rem 0.8rem;
-        min-width: 180px;
-    }
-    
-    .header-contact-left .contact-item-header {
-        font-size: 0.75rem;
-    }
-    
-    .header-contact-left .contact-item-header a {
-        font-size: 0.7rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-nav {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-    
-    .header-contact-left {
-        margin-right: 0;
-        margin-bottom: 1rem;
-        order: 1;
-        min-width: 100%;
-    }
-    
-    .logo {
-        order: 2;
-    }
-    
-    .nav-links {
-        order: 3;
-    }
-} 
-
 /* Section Headlines */
 .services h2,
 .projects h2,
@@ -1280,8 +1165,10 @@ body {
     text-shadow: none;
 }
 
-.nav-links a:hover,
-.nav-links a::after {
+.nav-links > a:hover,
+.nav-links > .dropdown > a:hover,
+.nav-links > a::before,
+.nav-links > .dropdown > a::before {
     color: var(--color-green);
     background-color: var(--color-green);
 }
@@ -1312,29 +1199,17 @@ section h2,
 
 .team-modal-header .role,
 .project-year,
-.contact-item a,
-.contact-item-header a,
-.header-contact .contact-item-header a,
-.header-contact-left .contact-item-header a {
+.contact-item a {
     color: var(--color-green);
 }
 
-.contact-item a:hover,
-.contact-item-header a:hover,
-.header-contact .contact-item-header a:hover,
-.header-contact-left .contact-item-header a:hover {
+.contact-item a:hover {
     color: var(--color-green-hover);
 }
 
 .quantity-item strong,
 .certification-note strong {
     color: var(--color-green);
-}
-
-.header-contact,
-.header-contact-left {
-    background: var(--color-green-soft);
-    border-color: var(--color-green);
 }
 
 footer {

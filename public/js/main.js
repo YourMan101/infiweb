@@ -101,6 +101,19 @@ const teamMembers = {
         experience: "Unwavering dedication to work and precision.",
         languages: "Swedish, English, Spanish.",
         projects: "Handles land surveying for various infrastructure and development projects."
+    },
+    georgios: {
+        name: "Georgios",
+        role: "LAND SURVEYOR",
+        image: "/images/Georgios.jpeg",
+        bio: "University-educated surveyor with a strong academic foundation and a thoughtful, analytical approach to surveying. Combines this background with careful fieldwork and attention to detail to support accurate, reliable results on infrastructure projects.",
+        expertise: [
+            "Land surveying and measurement",
+            "Careful field data collection",
+            "Analytical approach to surveying work",
+            "Accuracy and attention to detail"
+        ],
+        qualifications: "University education provides a strong academic foundation for surveying and measurement work."
     }
 };
 
