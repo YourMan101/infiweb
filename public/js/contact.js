@@ -1,6 +1,7 @@
 // Contact Form Functionality
 function handleContactSubmit(event) {
     event.preventDefault();
+    const isSwedish = document.documentElement.lang === 'sv';
     
     // Get form data
     const formData = new FormData(event.target);
@@ -14,13 +15,18 @@ function handleContactSubmit(event) {
     // Show loading state
     const submitBtn = event.target.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = isSwedish ? 'Skickar...' : 'Sending...';
     submitBtn.disabled = true;
     
     // Simulate form submission (replace with actual email service)
     setTimeout(() => {
         // Show success message
-        showMessage('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+        showMessage(
+            isSwedish
+                ? 'Tack! Ditt meddelande har skickats. Vi återkommer så snart vi kan.'
+                : 'Thank you! Your message has been sent successfully. We will get back to you soon.',
+            'success'
+        );
         
         // Reset form
         event.target.reset();
@@ -34,18 +40,19 @@ function handleContactSubmit(event) {
 // Form validation
 function validateForm(data) {
     const errors = [];
+    const isSwedish = document.documentElement.lang === 'sv';
     
     // Check required fields
     if (!data.name || data.name.trim().length < 2) {
-        errors.push('Please enter a valid name (minimum 2 characters)');
+        errors.push(isSwedish ? 'Ange ett giltigt namn (minst 2 tecken).' : 'Please enter a valid name (minimum 2 characters)');
     }
     
     if (!data.email || !isValidEmail(data.email)) {
-        errors.push('Please enter a valid email address');
+        errors.push(isSwedish ? 'Ange en giltig e-postadress.' : 'Please enter a valid email address');
     }
     
     if (!data.message || data.message.trim().length < 10) {
-        errors.push('Please enter a detailed message (minimum 10 characters)');
+        errors.push(isSwedish ? 'Skriv ett mer utförligt meddelande (minst 10 tecken).' : 'Please enter a detailed message (minimum 10 characters)');
     }
     
     // Show errors if any
@@ -138,7 +145,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.parentNode.appendChild(counter);
             }
             
-            counter.textContent = `${currentLength}/${maxLength} characters`;
+            counter.textContent = document.documentElement.lang === 'sv'
+                ? `${currentLength}/${maxLength} tecken`
+                : `${currentLength}/${maxLength} characters`;
             
             // Change color when approaching limit
             if (remaining < 100) {

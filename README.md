@@ -53,9 +53,12 @@ Open <http://localhost:3000> in your browser. This preview is only on your compu
 2. Edit the relevant files and preview the site locally. Main content files are:
    - `public/index.html` — homepage content and project cards
    - `public/project-fse101.html` and `public/project-fse215.html` — project detail pages
+   - `public/sv/` — Swedish versions of the homepage, contact page, About page, and project pages
    - `public/css/style.css` — styling and responsive layout
    - `public/js/main.js` — interactive features and team information
    - Other pages and images are in `public/`
+
+   The language selector in the header switches between English and Swedish while keeping the visitor on the corresponding page.
 
 3. Review which files changed:
 
@@ -112,7 +115,13 @@ infiweb/
 │   ├── more.html
 │   ├── contact.html
 │   ├── project-fse101.html
-│   └── project-fse215.html
+│   ├── project-fse215.html
+│   └── sv/
+│       ├── index.html
+│       ├── contact.html
+│       ├── more.html
+│       ├── project-fse101.html
+│       └── project-fse215.html
 ├── server.js
 ├── package.json
 └── README.md

@@ -117,44 +117,127 @@ const teamMembers = {
     }
 };
 
+const swedishTeamMembers = {
+    andrei: {
+        role: "CHEFSMÄTARE & MEDGRUNDARE",
+        bio: "Erfaren yrkesperson med gedigen kompetens inom mätning och mängdberäkning. Som medgrundare bidrar han med mer än tio års erfarenhet av infrastrukturprojekt.",
+        expertise: [
+            "Chefsmätare med över 10 års erfarenhet",
+            "Avancerade Excel-beräkningar",
+            "Expert på mängdmätning",
+            "Certifierad enligt behörighetstyp I",
+            "Teknisk expert och strategisk ledare",
+            "Medgrundare av Infinity Mätkonsult AB"
+        ],
+        qualifications: "Certifierad enligt behörighetstyp I med god kännedom om mätstandarder. Andreis tekniska kompetens, Excel-kunskaper och strategiska ledarskap driver vårt mätarbete.",
+        experience: "Över 10 år i Rumänien och 5 år i Trafikverkets projekt i Sverige.",
+        languages: "Rumänska, engelska och svenska.",
+        projects: "Nyligen genomförda projekt omfattar E4 Förbifart FSE 215 och E4 Förbifart FSE 101."
+    },
+    cristian: {
+        role: "SENIOR MÄTARE & MEDGRUNDARE",
+        bio: "Senior mätningstekniker med djup kompetens inom avancerade mätmetoder och projektledning. Som medgrundare säkerställer han högsta standard för noggrannhet och effektivitet.",
+        expertise: [
+            "Senior mätningstekniker med specialistutbildning",
+            "Projektledning och samordning",
+            "Avancerad mätutrustning",
+            "Komplexa miljöer: broar, tunnlar och järnvägar",
+            "Certifierad enligt behörighetstyp I",
+            "Medgrundare av Infinity Mätkonsult AB"
+        ],
+        qualifications: "Specialiserad på komplexa miljöer, bland annat broar, tunnlar och järnvägar. Certifierad enligt behörighetstyp I med kompetens inom flera mätområden.",
+        experience: "5 år i Rumänien och 5 år i Trafikverkets projekt i Sverige.",
+        languages: "Rumänska och engelska.",
+        projects: "Specialiserad på storskaliga infrastrukturprojekt och teamledning."
+    },
+    chakad: {
+        role: "BIM- & CAD-EXPERT",
+        bio: "BIM- och CAD-specialist som tillför modern teknik till mätprojekt. Kompetens inom byggnadsinformationsmodellering bidrar till noggranna och effektiva projektleveranser.",
+        expertise: [
+            "Expert på BIM (byggnadsinformationsmodellering)",
+            "Specialist på CAD-programvara",
+            "3D-modellering och visualisering",
+            "Digitala byggprocesser",
+            "Strategier för BIM-implementering",
+            "Erfarenhet från internationella projekt"
+        ],
+        qualifications: "Strateg inom BIM-implementering och expert på CAD-programvara. Dokumenterad erfarenhet från varierande internationella miljöer och ett starkt engagemang för noggrannhet och professionalism.",
+        experience: "Över 10 år i Afrika och Europa. Brinner för kontinuerligt lärande.",
+        languages: "Persiska, engelska och spanska.",
+        projects: "Inför avancerade BIM-lösningar för komplexa infrastrukturprojekt."
+    },
+    gabriel: {
+        role: "MÄTNINGSTEKNIKER",
+        bio: "Engagerad mätningstekniker med kompetens inom noggranna mätningar och markbedömning. Ett öga för detaljer bidrar till korrekt datainsamling i alla projekt.",
+        expertise: [
+            "Lantmäteri och kartläggning",
+            "Noggranna mätmetoder",
+            "Platsbedömning och analys",
+            "Bearbetning av mätdata",
+            "BIM-implementering",
+            "Drönarmätningar",
+            "Maskinstyrning"
+        ],
+        qualifications: "En viktig teammedlem med engagemang för kvalitet. Specialiserad på BIM-implementering, drönarmätningar och maskinstyrning.",
+        experience: "Arbetar med stort engagemang och noggrannhet.",
+        languages: "Svenska, engelska och spanska.",
+        projects: "Utför mätning för olika infrastruktur- och exploateringsprojekt."
+    },
+    georgios: {
+        role: "MÄTNINGSTEKNIKER",
+        bio: "Universitetsutbildad mätningstekniker med en stark akademisk grund och ett analytiskt arbetssätt. Kombinerar sin utbildning med noggrant fältarbete och känsla för detaljer för att bidra till tillförlitliga resultat i infrastrukturprojekt.",
+        expertise: [
+            "Mätning och lantmäteri",
+            "Noggrann insamling av fältdata",
+            "Analytiskt arbetssätt",
+            "Precision och känsla för detaljer"
+        ],
+        qualifications: "Universitetsutbildningen ger en gedigen akademisk grund inom mätning och lantmäteri."
+    }
+};
+
 // Team modal functionality
 function openTeamModal(memberId) {
     const modal = document.getElementById('team-modal');
     const modalBody = document.getElementById('team-modal-body');
+    const isSwedish = document.documentElement.lang === 'sv';
     const member = teamMembers[memberId];
+    const localizedMember = isSwedish ? { ...member, ...swedishTeamMembers[memberId] } : member;
+    const labels = isSwedish
+        ? { qualifications: "Kvalifikationer", experience: "Erfarenhet", languages: "Språk", expertise: "Kompetensområden", projects: "Nyligen genomförda projekt" }
+        : { qualifications: "Qualifications", experience: "Experience", languages: "Languages Spoken", expertise: "Expertise", projects: "Recent Projects" };
     
-    if (member) {
+    if (member && localizedMember) {
         modalBody.innerHTML = `
             <div class="team-modal-header">
-                <img src="${member.image}" alt="${member.name}">
-                <h2>${member.name}</h2>
-                <div class="role">${member.role}</div>
+                <img src="${localizedMember.image}" alt="${localizedMember.name}">
+                <h2>${localizedMember.name}</h2>
+                <div class="role">${localizedMember.role}</div>
             </div>
             <div class="team-modal-body">
-                <p>${member.bio}</p>
+                <p>${localizedMember.bio}</p>
                 
-                ${member.qualifications ? `
-                <h3>Qualifications</h3>
-                <p>${member.qualifications}</p>
+                ${localizedMember.qualifications ? `
+                <h3>${labels.qualifications}</h3>
+                <p>${localizedMember.qualifications}</p>
                 ` : ''}
                 
-                ${member.experience ? `
-                <h3>Experience</h3>
-                <p>${member.experience}</p>
+                ${localizedMember.experience ? `
+                <h3>${labels.experience}</h3>
+                <p>${localizedMember.experience}</p>
                 ` : ''}
                 
-                ${member.languages ? `
-                <h3>Languages Spoken</h3>
-                <p>${member.languages}</p>
+                ${localizedMember.languages ? `
+                <h3>${labels.languages}</h3>
+                <p>${localizedMember.languages}</p>
                 ` : ''}
                 
-                <h3>Expertise</h3>
+                <h3>${labels.expertise}</h3>
                 <ul>
-                    ${member.expertise.map(item => `<li>${item}</li>`).join('')}
+                    ${localizedMember.expertise.map(item => `<li>${item}</li>`).join('')}
                 </ul>
                 
-                <h3>Recent Projects</h3>
-                <p>${member.projects}</p>
+                ${localizedMember.projects ? `<h3>${labels.projects}</h3><p>${localizedMember.projects}</p>` : ''}
             </div>
         `;
         
@@ -176,32 +259,7 @@ function closeTeamModal() {
     document.body.style.overflow = 'auto'; // Restore scrolling
 }
 
-// Modal functionality for "More"
 document.addEventListener('DOMContentLoaded', function() {
-    const moreBtn = document.getElementById('more-btn');
-    const modal = document.getElementById('more-modal');
-    const closeModal = document.getElementById('close-modal');
-    const modalText = document.getElementById('modal-text');
-
-    if (moreBtn && modal && closeModal) {
-        moreBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            modal.style.display = 'flex';
-            // You can set modalText.innerHTML here if you want dynamic content
-        });
-
-        closeModal.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        // Optional: close modal when clicking outside the modal content
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
-
     // Team modal close functionality
     const closeTeamModalBtn = document.querySelector('.close-team-modal');
     const teamModal = document.getElementById('team-modal');
