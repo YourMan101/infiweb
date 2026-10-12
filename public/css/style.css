@@ -198,8 +198,8 @@ body {
 
 .language-switch a:hover,
 .language-switch a:focus-visible {
-    background: #2f7d32;
-    color: #fff;
+    background: #f3f4f6;
+    color: #1f2a37;
 }
 
 .language-switch img {
@@ -1301,12 +1301,14 @@ body {
     text-shadow: none;
 }
 
-.nav-links > a:hover,
-.nav-links > .dropdown > a:hover,
 .nav-links > a::before,
 .nav-links > .dropdown > a::before {
-    color: var(--color-green);
     background-color: var(--color-green);
+}
+
+.nav-links > a:hover,
+.nav-links > .dropdown > a:hover {
+    color: var(--color-green);
 }
 
 section h2,
