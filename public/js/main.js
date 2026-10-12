@@ -32,7 +32,7 @@ const teamMembers = {
     andrei: {
         name: "Andrei Bob",
         role: "CHIEF SURVEYOR & CO-FOUNDER",
-        image: "/images/team1.png",
+        image: "/images/Andrei.png",
         bio: "Seasoned professional with extensive experience in surveying and quantity calculations. Co-founder bringing over a decade of expertise in infrastructure projects.",
         expertise: [
             "Chief Surveyor with 10+ years experience",
@@ -50,7 +50,7 @@ const teamMembers = {
     cristian: {
         name: "Cristian Dan",
         role: "SENIOR SURVEYOR & CO-FOUNDER",
-        image: "/images/team2.png",
+        image: "/images/Cristian.png",
         bio: "Senior surveyor with deep expertise in advanced surveying techniques and project management. Co-founder ensuring highest standards of accuracy and efficiency.",
         expertise: [
             "Senior Surveyor with specialized training",
