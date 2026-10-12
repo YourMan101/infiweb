@@ -364,6 +364,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    align-items: stretch;
 }
 
 .project-item {
@@ -390,6 +391,29 @@ section h2 {
     margin-top: 0.5rem;
     color: var(--color-green);
     font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.project-type {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: var(--color-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.portfolio-highlights {
+    margin-top: 3.5rem;
+    scroll-margin-top: 120px;
+}
+
+.portfolio-highlights > h3 {
+    margin-bottom: 1.5rem;
+    color: var(--color-heading);
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .project-item h3 {
@@ -914,6 +938,12 @@ section {
     color: #96B69D;
     margin-bottom: 1rem;
     font-size: 1.4rem;
+}
+
+.portfolio-item h4 {
+    margin-bottom: 0.75rem;
+    color: var(--color-heading);
+    font-size: 1.15rem;
 }
 
 .portfolio-item p {
