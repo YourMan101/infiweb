@@ -393,13 +393,15 @@ section h2 {
     background: #fff;
     backface-visibility: hidden;
     transform: rotateY(180deg);
+    display: grid;
+    place-items: center;
 }
 
 .service-card-back img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .service-flip-card.is-flipped .service-card-inner {
@@ -411,15 +413,6 @@ section h2 {
     font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
-}
-
-.service-card-back .service-flip-hint {
-    position: absolute;
-    right: 0.5rem;
-    bottom: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.9);
 }
 
 .service-card-toggle {
