@@ -120,12 +120,21 @@
             </div>
             <button class="service-card-toggle" type="button" aria-label="Show project photo" aria-pressed="false" data-image-label="Show project photo" data-details-label="Show service details"></button>
           </div>
-          <div class="service-item">
-            <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
-              <path d="m24 7 14 8v17l-14 8-14-8V15zM10 15l14 8 14-8M24 23v17M17 11l14 8"/>
-            </svg>
-            <h3>3D Modeling for Machine Control</h3>
-            <p>Advanced 3D modeling for machine control operations ensuring precision in automated construction processes.</p>
+          <div class="service-item service-flip-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="m24 7 14 8v17l-14 8-14-8V15zM10 15l14 8 14-8M24 23v17M17 11l14 8"/>
+                </svg>
+                <h3>3D Modeling for Machine Control</h3>
+                <p>Advanced 3D modeling for machine control operations ensuring precision in automated construction processes.</p>
+                <span class="service-flip-hint" aria-hidden="true">Click to see a machine-control model</span>
+              </div>
+              <div class="service-card-back" aria-hidden="true">
+                <img src="/images/machinelogo.png" alt="3D machine-control model">
+              </div>
+            </div>
+            <button class="service-card-toggle" type="button" aria-label="Show machine-control model" aria-pressed="false" data-image-label="Show machine-control model" data-details-label="Show service details"></button>
           </div>
           <div class="service-item">
             <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
