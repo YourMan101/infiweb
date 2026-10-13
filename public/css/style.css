@@ -407,6 +407,14 @@ section h2 {
     object-fit: contain;
 }
 
+.service-gallery-slide {
+    display: none;
+}
+
+.service-gallery-slide.is-active {
+    display: block;
+}
+
 .service-flip-card.is-flipped .service-card-inner {
     transform: rotateY(180deg);
 }
@@ -434,6 +442,63 @@ section h2 {
 .service-card-toggle:focus-visible {
     outline: 3px solid var(--color-green);
     outline-offset: 4px;
+}
+
+.service-gallery-count,
+.service-gallery-control {
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    background: rgba(31, 42, 55, 0.78);
+}
+
+.service-gallery-count {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.service-gallery-count[aria-hidden="true"] {
+    visibility: hidden;
+}
+
+.service-gallery-control {
+    top: 50%;
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.service-gallery-previous {
+    left: 0.5rem;
+}
+
+.service-gallery-next {
+    right: 0.5rem;
+}
+
+.service-gallery-control:hover {
+    background: rgba(31, 42, 55, 0.95);
+}
+
+.service-gallery-control:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+.service-gallery-control:disabled {
+    display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

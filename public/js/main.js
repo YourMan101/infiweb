@@ -23,6 +23,35 @@ document.querySelectorAll('.service-flip-card .service-card-toggle').forEach(tog
         toggle.setAttribute('aria-label', toggle.dataset[isFlipped ? 'detailsLabel' : 'imageLabel']);
         front.setAttribute('aria-hidden', String(isFlipped));
         back.setAttribute('aria-hidden', String(!isFlipped));
+        card.querySelectorAll('.service-gallery-control, .service-gallery-count').forEach(control => {
+            control.setAttribute('aria-hidden', String(!isFlipped));
+        });
+        card.querySelectorAll('.service-gallery-control').forEach(control => {
+            control.disabled = !isFlipped;
+        });
+    });
+});
+
+document.querySelectorAll('.service-gallery-card').forEach(card => {
+    const slides = Array.from(card.querySelectorAll('.service-gallery-slide'));
+    const count = card.querySelector('.service-gallery-count');
+    let activeIndex = 0;
+
+    const showSlide = index => {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === activeIndex;
+            slide.classList.toggle('is-active', isActive);
+            slide.setAttribute('aria-hidden', String(!isActive));
+        });
+        count.textContent = `${activeIndex + 1} / ${slides.length}`;
+    };
+
+    card.querySelector('.service-gallery-previous').addEventListener('click', () => {
+        showSlide(activeIndex - 1);
+    });
+    card.querySelector('.service-gallery-next').addEventListener('click', () => {
+        showSlide(activeIndex + 1);
     });
 });
 

@@ -46,9 +46,24 @@
     <section id="services" class="services">
         <h2>Våra tjänster</h2>
         <div class="services-grid">
-            <div class="service-item">
-                <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h32v24H8zM14 30l7-8 5 5 8-10M14 17h5M29 31h5"/><circle cx="34" cy="17" r="2"/></svg>
-                <h3>Datauttag från ritningar och modeller</h3><p>Vi tar fram exakta data från projekteringsunderlag och 3D-modeller för ett korrekt genomförande av projektet.</p>
+            <div class="service-item service-flip-card service-gallery-card">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h32v24H8zM14 30l7-8 5 5 8-10M14 17h5M29 31h5"/><circle cx="34" cy="17" r="2"/></svg>
+                        <h3>Datauttag från ritningar och modeller</h3>
+                        <p>Vi tar fram exakta data från projekteringsunderlag och 3D-modeller för ett korrekt genomförande av projektet.</p>
+                        <span class="service-flip-hint" aria-hidden="true">Klicka för att se projektbilder</span>
+                    </div>
+                    <div class="service-card-back" aria-hidden="true">
+                        <img class="service-gallery-slide is-active" src="/images/bridge1.jpg" alt="Brobyggnation som digital modell">
+                        <img class="service-gallery-slide" src="/images/b3d.png" alt="3D-modell av bro med konstruktionselement">
+                        <img class="service-gallery-slide" src="/images/b3d2.png" alt="Flygfoto av brobygge">
+                    </div>
+                </div>
+                <button class="service-card-toggle" type="button" aria-label="Visa projektexempel" aria-pressed="false" data-image-label="Visa projektexempel" data-details-label="Visa tjänstebeskrivning"></button>
+                <span class="service-gallery-count" aria-live="polite" aria-hidden="true">1 / 3</span>
+                <button class="service-gallery-control service-gallery-previous" type="button" aria-label="Föregående projektbild" aria-hidden="true" disabled>&#8249;</button>
+                <button class="service-gallery-control service-gallery-next" type="button" aria-label="Nästa projektbild" aria-hidden="true" disabled>&#8250;</button>
             </div>
             <div class="service-item service-flip-card">
                 <div class="service-card-inner">
