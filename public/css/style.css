@@ -387,9 +387,9 @@ section h2 {
 
 .service-card-back {
     position: absolute;
-    inset: 1%;
+    inset: 0;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
     background: #fff;
     backface-visibility: hidden;
     transform: rotateY(180deg);
