@@ -149,14 +149,18 @@ const teamMembers = {
         name: "Georgios Salamouras",
         role: "LAND SURVEYOR",
         image: "/images/Georgios.jpeg",
-        bio: "University-educated surveyor with a strong academic foundation and a thoughtful, analytical approach to surveying. Combines this background with careful fieldwork and attention to detail to support accurate, reliable results on infrastructure projects.",
+        bio: "Georgios holds an MEng in Land Surveying & Geoinformatics Engineering from NTU of Athens, specializing in Urban & Transport Planning. He has also studied in the KTH MSc Transport and Geoinformation Technology program.",
         expertise: [
-            "Land surveying and measurement",
-            "Careful field data collection",
-            "Analytical approach to surveying work",
-            "Accuracy and attention to detail"
+            "Topographical and site-planning surveys",
+            "Construction staking and as-built surveys",
+            "UAV/drone mapping & photogrammetry",
+            "Geoinformation Technology (GIS) techniques",
+            "Community Development Planning"
         ],
-        qualifications: "University education provides a strong academic foundation for surveying and measurement work."
+        qualifications: "He is an accredited Land Surveyor and member of the Technical Chamber of Greece, and a certified UAV Pilot.",
+        experience: "Before joining Infinity Mätkonsult, Georgios worked in Greece as a Land Surveyor in the Hellenic Air Force and on private projects, and as an Urban-Transport Planner developing and coordinating Community Development Masterplans for Greek municipalities. He has also worked as a research assistant for the Sustainable Mobility Unit (Lab) at NTU of Athens and the Division of Transport Planning at KTH.",
+        languages: "Greek, English, Swedish, Italian.",
+        projects: "Resarö Mitt Project."
     }
 };
 
@@ -228,14 +232,18 @@ const swedishTeamMembers = {
     },
     georgios: {
         role: "MÄTNINGSTEKNIKER",
-        bio: "Universitetsutbildad mätningstekniker med en stark akademisk grund och ett analytiskt arbetssätt. Kombinerar sin utbildning med noggrant fältarbete och känsla för detaljer för att bidra till tillförlitliga resultat i infrastrukturprojekt.",
+        bio: "Georgios har en civilingenjörsexamen (MEng) i lantmäteri och geoinformatik från NTU i Aten, med inriktning på stads- och transportplanering. Han har även studerat på masterprogrammet Transport and Geoinformation Technology vid KTH.",
         expertise: [
-            "Mätning och lantmäteri",
-            "Noggrann insamling av fältdata",
-            "Analytiskt arbetssätt",
-            "Precision och känsla för detaljer"
+            "Topografiska mätningar och mätningar för markplanering",
+            "Utsättning i byggprojekt och relationsmätningar",
+            "UAV-/drönarkartering och fotogrammetri",
+            "Geoinformationsteknik (GIS)",
+            "Planering för lokalsamhällens utveckling"
         ],
-        qualifications: "Universitetsutbildningen ger en gedigen akademisk grund inom mätning och lantmäteri."
+        qualifications: "Han är auktoriserad lantmätare, medlem i Greklands tekniska kammare och certifierad UAV-pilot.",
+        experience: "Innan Georgios började på Infinity Mätkonsult arbetade han i Grekland som lantmätare inom det grekiska flygvapnet och med privata projekt, samt som stads- och transportplanerare. Där utvecklade och samordnade han utvecklingsplaner för grekiska kommuner. Han har även arbetat som forskningsassistent vid Sustainable Mobility Unit (Lab) på NTU i Aten och vid avdelningen för transportplanering på KTH.",
+        languages: "Grekiska, engelska, svenska och italienska.",
+        projects: "Resarö Mitt-projektet."
     }
 };
 
