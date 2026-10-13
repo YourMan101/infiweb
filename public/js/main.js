@@ -12,6 +12,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+document.querySelectorAll('.service-flip-card .service-card-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const card = toggle.closest('.service-flip-card');
+        const front = card.querySelector('.service-card-front');
+        const back = card.querySelector('.service-card-back');
+        const isFlipped = card.classList.toggle('is-flipped');
+
+        toggle.setAttribute('aria-pressed', String(isFlipped));
+        toggle.setAttribute('aria-label', toggle.dataset[isFlipped ? 'detailsLabel' : 'imageLabel']);
+        front.setAttribute('aria-hidden', String(isFlipped));
+        back.setAttribute('aria-hidden', String(!isFlipped));
+    });
+});
+
 // Fade-in animation for elements as they come into view
 const observerOptions = {
     threshold: 0.1,
