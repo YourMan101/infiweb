@@ -111,7 +111,7 @@ const teamMembers = {
         projects: "Specializes in large-scale infrastructure projects and team leadership."
     },
     chakad: {
-        name: "Chakad Bozorgmher",
+        name: "Chakad Bozorgmehr",
         role: "BIM & CAD EXPERT",
         image: "/images/team3.png",
         bio: "BIM and CAD specialist bringing cutting-edge technology to surveying projects. Expertise in Building Information Modeling ensures precise and efficient project delivery.",
