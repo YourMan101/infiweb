@@ -190,13 +190,22 @@
             </div>
             <button class="service-card-toggle" type="button" aria-label="Show drone photo" aria-pressed="false" data-image-label="Show drone photo" data-details-label="Show service details"></button>
           </div>
-          <div class="service-item">
-            <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
-              <path d="M12 8h18l8 8v24H12zM30 8v9h8M18 25h14m-14 6h14m-14 6h9"/>
-              <path d="m17 16 2 2 4-5"/>
-            </svg>
-            <h3>Documentation & Payment Certificates</h3>
-            <p>Comprehensive documentation and monthly payment certificates works for project management and financial tracking.</p>
+          <div class="service-item service-flip-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M12 8h18l8 8v24H12zM30 8v9h8M18 25h14m-14 6h14m-14 6h9"/>
+                  <path d="m17 16 2 2 4-5"/>
+                </svg>
+                <h3>Documentation &amp; Payment Certificates</h3>
+                <p>Comprehensive documentation and monthly payment certificates works for project management and financial tracking.</p>
+                <span class="service-flip-hint" aria-hidden="true">Click to see a documentation example</span>
+              </div>
+              <div class="service-card-back" aria-hidden="true">
+                <img src="/images/documents.png" alt="Documentation and payment certificates example">
+              </div>
+            </div>
+            <button class="service-card-toggle" type="button" aria-label="Show documentation example" aria-pressed="false" data-image-label="Show documentation example" data-details-label="Show service details"></button>
           </div>
         </div>
       </section>
