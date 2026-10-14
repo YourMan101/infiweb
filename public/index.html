@@ -89,12 +89,25 @@
             </div>
             <button class="service-card-toggle" type="button" aria-label="Show project photo" aria-pressed="false" data-image-label="Show project photo" data-details-label="Show service details"></button>
           </div>
-          <div class="service-item">
-            <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
-              <path d="M8 11h32v26H8zM13 31l8-8 6 5 8-9M30 19h5v5"/>
-            </svg>
-            <h3>As-Built Measurements</h3>
-            <p>Data measurements for as-built drawings to ensure accuracy and compliance with design specifications.</p>
+          <div class="service-item service-flip-card service-gallery-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M8 11h32v26H8zM13 31l8-8 6 5 8-9M30 19h5v5"/>
+                </svg>
+                <h3>As-Built Measurements</h3>
+                <p>Data measurements for as-built drawings to ensure accuracy and compliance with design specifications.</p>
+                <span class="service-flip-hint" aria-hidden="true">Click to see as-built examples</span>
+              </div>
+              <div class="service-card-back" aria-hidden="true">
+                <img class="service-gallery-slide is-active" src="/images/5bf.png" alt="Aerial image of a road crossing">
+                <img class="service-gallery-slide" src="/images/5af.png" alt="As-built survey overlay on an aerial road image">
+              </div>
+            </div>
+            <button class="service-card-toggle" type="button" aria-label="Show as-built examples" aria-pressed="false" data-image-label="Show as-built examples" data-details-label="Show service details"></button>
+            <span class="service-gallery-count" aria-live="polite" aria-hidden="true">1 / 2</span>
+            <button class="service-gallery-control service-gallery-previous" type="button" aria-label="Previous as-built image" aria-hidden="true" disabled>&#8249;</button>
+            <button class="service-gallery-control service-gallery-next" type="button" aria-label="Next as-built image" aria-hidden="true" disabled>&#8250;</button>
           </div>
           <div class="service-item">
             <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
