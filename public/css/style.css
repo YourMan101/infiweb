@@ -1189,6 +1189,12 @@ section {
     font-weight: 600;
 }
 
+.project-disclaimer {
+    margin: 0 0 1.5rem;
+    color: #526052;
+    font-size: 0.95rem;
+}
+
 .project-section {
     margin-bottom: 2.5rem;
     padding: 1.5rem;
