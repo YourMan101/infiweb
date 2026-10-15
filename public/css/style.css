@@ -1227,7 +1227,7 @@ section {
 .project-story-item {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: center;
+    align-items: start;
     gap: 1.5rem;
     padding: 1.5rem;
     background: #fff;
