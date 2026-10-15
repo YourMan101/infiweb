@@ -217,7 +217,7 @@ body {
     min-height: 480px;
     height: 68vh;
     max-height: 760px;
-    background-image: url('/images/bridge1.jpg');
+    background-image: url('/images/bridge2.png');
     background-size: cover;
     background-position: center 20%;  /* Adjusted to show more of the top of the image */
     background-repeat: no-repeat;
