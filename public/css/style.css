@@ -1263,6 +1263,20 @@ section {
     margin: 0;
 }
 
+.project-image-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.project-image-button:focus-visible {
+    outline: 3px solid var(--color-green);
+    outline-offset: 3px;
+}
+
 .project-story-media img {
     display: block;
     width: 100%;
@@ -1276,6 +1290,58 @@ section {
     color: #526052;
     font-size: 0.85rem;
     text-align: center;
+}
+
+.project-lightbox {
+    position: relative;
+    width: min(92vw, 1100px);
+    max-width: none;
+    max-height: 94vh;
+    margin: auto;
+    padding: 2.75rem 1rem 1rem;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.project-lightbox::backdrop {
+    background: rgba(15, 23, 42, 0.82);
+}
+
+.project-lightbox-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 78vh;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.project-lightbox-caption {
+    margin: 0.75rem 2rem 0;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.project-lightbox-close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-green-soft);
+    color: var(--color-text);
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.project-lightbox-close:focus-visible {
+    outline: 3px solid var(--color-green);
+    outline-offset: 2px;
 }
 
 @media (max-width: 1000px) {
