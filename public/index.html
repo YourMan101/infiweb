@@ -109,7 +109,7 @@
             <button class="service-gallery-control service-gallery-previous" type="button" aria-label="Previous as-built image" aria-hidden="true" disabled>&#8249;</button>
             <button class="service-gallery-control service-gallery-next" type="button" aria-label="Next as-built image" aria-hidden="true" disabled>&#8250;</button>
           </div>
-          <div class="service-item service-flip-card">
+          <div class="service-item service-flip-card service-gallery-card">
             <div class="service-card-inner">
               <div class="service-card-front">
                 <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
@@ -118,13 +118,17 @@
                 </svg>
                 <h3>Network Measurements</h3>
                 <p>Network measurements and maintenance for reliable project foundations and ongoing monitoring.</p>
-                <span class="service-flip-hint" aria-hidden="true">Click to see a site photo</span>
+                <span class="service-flip-hint" aria-hidden="true">Click to see network measurement images</span>
               </div>
               <div class="service-card-back" aria-hidden="true">
-                <img src="/images/network.jpeg" alt="Surveying instruments beside a road">
+                <img class="service-gallery-slide is-active" src="/images/network2.png" alt="Survey network measurements over an aerial image of roads">
+                <img class="service-gallery-slide" src="/images/network3.png" alt="Survey network measurements over an aerial highway image">
               </div>
             </div>
-            <button class="service-card-toggle" type="button" aria-label="Show project photo" aria-pressed="false" data-image-label="Show project photo" data-details-label="Show service details"></button>
+            <button class="service-card-toggle" type="button" aria-label="Show network measurement images" aria-pressed="false" data-image-label="Show network measurement images" data-details-label="Show service details"></button>
+            <span class="service-gallery-count" aria-live="polite" aria-hidden="true">1 / 2</span>
+            <button class="service-gallery-control service-gallery-previous" type="button" aria-label="Previous network measurement image" aria-hidden="true" disabled>&#8249;</button>
+            <button class="service-gallery-control service-gallery-next" type="button" aria-label="Next network measurement image" aria-hidden="true" disabled>&#8250;</button>
           </div>
           <div class="service-item service-flip-card">
             <div class="service-card-inner">
