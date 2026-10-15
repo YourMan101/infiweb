@@ -111,7 +111,7 @@ body {
 
 .logo img {
     display: block;
-    width: min(190px, 24vw);
+    width: min(170px, 22vw);
     height: auto;
 }
 
@@ -233,7 +233,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(15, 23, 42, 0.78) 0%, rgba(15, 23, 42, 0.52) 55%, rgba(15, 23, 42, 0.2) 100%);
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.84) 0%, rgba(15, 23, 42, 0.68) 55%, rgba(15, 23, 42, 0.36) 100%);
 }
 
 .hero-content {
@@ -259,7 +259,7 @@ body {
     color: #fff;
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.6;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
 
 .hero-button {
@@ -955,7 +955,7 @@ footer {
     }
 
     .logo img {
-        width: min(170px, 70vw);
+        width: min(150px, 60vw);
     }
 
     .nav-links {
@@ -1044,7 +1044,7 @@ footer {
     }
 
     .logo img {
-        width: min(155px, 70vw);
+        width: min(140px, 60vw);
     }
 
     .nav-links {
