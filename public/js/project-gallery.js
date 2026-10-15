@@ -20,6 +20,24 @@ if (projectGalleryFigures.length && typeof HTMLDialogElement !== 'undefined') {
     dialog.append(closeButton, image, caption);
     document.body.append(dialog);
 
+    let opener = null;
+    let scrollPosition = 0;
+    const keepPagePosition = () => {
+        const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollPosition);
+        requestAnimationFrame(() => {
+            window.scrollTo(0, scrollPosition);
+            document.documentElement.style.scrollBehavior = previousScrollBehavior;
+        });
+    };
+    const restorePagePosition = () => {
+        if (opener?.isConnected) {
+            opener.focus({ preventScroll: true });
+        }
+        keepPagePosition();
+    };
+
     projectGalleryFigures.forEach(figure => {
         const thumbnail = figure.querySelector('img');
         const figureCaption = figure.querySelector('figcaption');
@@ -35,14 +53,18 @@ if (projectGalleryFigures.length && typeof HTMLDialogElement !== 'undefined') {
         button.append(thumbnail);
 
         button.addEventListener('click', () => {
+            opener = button;
+            scrollPosition = window.scrollY;
             image.src = thumbnail.currentSrc || thumbnail.src;
             image.alt = thumbnail.alt;
             caption.textContent = figureCaption?.textContent.trim() || thumbnail.alt;
             dialog.showModal();
+            keepPagePosition();
         });
     });
 
     closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', restorePagePosition);
     dialog.addEventListener('keydown', event => {
         if (event.key === 'Escape') {
             event.preventDefault();
