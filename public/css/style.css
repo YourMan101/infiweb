@@ -85,7 +85,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
+    padding: 0.75rem 5%;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
@@ -223,7 +223,7 @@ body {
     background-repeat: no-repeat;
     position: relative;
     margin: 0;
-    margin-top: 100px;
+    margin-top: 110px;
     display: flex;
     align-items: center;
     padding: 3rem 10%;
@@ -262,6 +262,12 @@ body {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .hero-button {
     display: inline-block;
     padding: 0.9rem 1.6rem;
@@ -277,6 +283,16 @@ body {
     background: var(--color-green-hover);
     color: #fff;
     transform: translateY(-2px);
+}
+
+.hero-button-secondary {
+    border: 2px solid #fff;
+    background: transparent;
+}
+
+.hero-button-secondary:hover {
+    background: #fff;
+    color: var(--color-heading);
 }
 
 .hero-button:focus-visible {
@@ -348,7 +364,7 @@ section h2 {
 
 .service-item h3 {
     color: #96B69D;
-    align-self: center;
+    align-self: start;
     margin: 0;
     line-height: 1.35;
 }
@@ -373,7 +389,7 @@ section h2 {
 
 .service-card-front {
     display: grid;
-    grid-template-rows: 2.75rem minmax(2.5rem, auto) 1fr auto;
+    grid-template-rows: 2.75rem 5.4rem 1fr auto;
     align-content: start;
     height: 100%;
     padding: 2rem;
@@ -420,29 +436,28 @@ section h2 {
 }
 
 .service-flip-hint {
-    display: grid;
-    place-items: center;
-    width: 2rem;
-    height: 2rem;
-    margin: 0.5rem auto 0;
-    border-radius: 50%;
-    background: var(--color-green-soft);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    min-height: 1.5rem;
+    margin-top: 0.5rem;
     color: var(--color-green);
-    font-size: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
     line-height: 1;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .service-flip-hint::before {
-    content: "\21bb";
-    font-size: 1.25rem;
+    content: "\2192";
+    order: 1;
 }
 
 .service-flip-card:hover .service-flip-hint,
 .service-flip-card:focus-within .service-flip-hint {
-    transform: rotate(-45deg);
-    background: var(--color-green);
-    color: #fff;
+    transform: translateX(3px);
+    color: var(--color-green-hover);
 }
 
 .service-card-toggle {
@@ -948,6 +963,26 @@ footer {
     margin: 1.5rem 0 0;
     color: #e5e7eb;
     font-size: 0.85rem;
+}
+
+section.closing-cta {
+    padding: 3.5rem 10%;
+    background: #f1f6f0;
+    text-align: center;
+}
+
+.closing-cta h2 {
+    margin-bottom: 0.75rem;
+    color: var(--color-heading);
+}
+
+.closing-cta p {
+    margin: 0 auto 1.5rem;
+    max-width: 38rem;
+}
+
+.closing-cta .hero-button {
+    margin: 0;
 }
 
 /* Responsive Design */
