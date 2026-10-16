@@ -1218,6 +1218,17 @@ section {
     margin-bottom: 0;
 }
 
+.project-section ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.project-section li + li {
+    margin-top: 0.35rem;
+}
+
 .project-story {
     display: grid;
     gap: 1.5rem;
