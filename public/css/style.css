@@ -577,8 +577,14 @@ section h2 {
 
 .current-project-card h4 {
     margin: 1rem 0 0.25rem;
-    color: #96B69D;
+    color: var(--color-green);
     font-size: 1.2rem;
+    text-align: center;
+}
+
+.current-project-card .project-link-hint {
+    display: block;
+    margin-top: 0.75rem;
     text-align: center;
 }
 
