@@ -1352,6 +1352,67 @@ section {
     box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
 
+.resaro-photo {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+    border-radius: 8px;
+}
+
+.resaro-photo:focus-visible {
+    outline: 3px solid var(--color-green);
+    outline-offset: 3px;
+}
+
+.resaro-photo:hover img {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.resaro-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.88);
+}
+
+.resaro-lightbox[hidden] {
+    display: none;
+}
+
+.resaro-lightbox-img {
+    max-width: min(92vw, 1400px);
+    max-height: 88vh;
+    border-radius: 6px;
+}
+
+.resaro-lightbox button {
+    position: absolute;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.resaro-lightbox button:hover,
+.resaro-lightbox button:focus-visible {
+    background: var(--color-green);
+}
+
+.resaro-lightbox-close { top: 1rem; right: 1rem; }
+.resaro-lightbox-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+.resaro-lightbox-next { right: 1rem; top: 50%; transform: translateY(-50%); }
+
 .resaro-timeline-item figcaption {
     margin-top: 0.5rem;
     color: #526052;
