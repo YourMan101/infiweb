@@ -96,13 +96,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="work-arrangement">Choose your desired working</label>
-                        <select id="work-arrangement" name="work_arrangement">
-                            <option value="">Choose a working arrangement...</option>
-                            <option value="fulltime-8h">Fulltime (8h)</option>
-                            <option value="called-when-needed">Called when needed</option>
-                            <option value="self-directed-results">Self going with delivery of results</option>
+                        <label for="work-arrangement">Preferred working arrangement (optional)</label>
+                        <select id="work-arrangement" name="work_arrangement" aria-describedby="work-arrangement-help">
+                            <option value="" selected disabled>Choose a working arrangement...</option>
+                            <option value="fulltime-8h">Full-time (8h/day)</option>
+                            <option value="called-when-needed">On call / as needed</option>
+                            <option value="self-directed-results">Self-directed, delivery of results</option>
+                            <option value="discuss">Not sure yet / Let’s discuss</option>
                         </select>
+                        <small class="form-help" id="work-arrangement-help">Full-time means a consultant embedded in your team (8 h/day); on call means support as needed; self-directed means we plan the work and deliver the agreed results.</small>
                     </div>
                     
                     <div class="form-group">

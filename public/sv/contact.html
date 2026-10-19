@@ -57,13 +57,15 @@
                     <div class="form-group"><label for="phone">Telefonnummer</label><input type="tel" id="phone" name="phone" maxlength="50" autocomplete="tel"></div>
                     <div class="form-group"><label for="company">Företag</label><input type="text" id="company" name="company" maxlength="150" autocomplete="organization"></div>
                     <div class="form-group">
-                        <label for="work-arrangement">Välj önskat arbetssätt</label>
-                        <select id="work-arrangement" name="work_arrangement">
-                            <option value="">Välj ett arbetssätt...</option>
-                            <option value="fulltime-8h">Heltid (8 timmar)</option>
+                        <label for="work-arrangement">Önskat arbetssätt (frivilligt)</label>
+                        <select id="work-arrangement" name="work_arrangement" aria-describedby="work-arrangement-help">
+                            <option value="" selected disabled>Välj ett arbetssätt...</option>
+                            <option value="fulltime-8h">Heltid (8 h/dag)</option>
                             <option value="called-when-needed">Vid behov</option>
-                            <option value="self-directed-results">Självständigt arbete med resultatleverans</option>
+                            <option value="self-directed-results">Egen planering med leverans av resultat</option>
+                            <option value="discuss">Osäker ännu / Låt oss prata</option>
                         </select>
+                        <small class="form-help" id="work-arrangement-help">Heltid innebär en konsult i ert team (8 h/dag); vid behov innebär stöd när det behövs; egen planering innebär att vi planerar arbetet och levererar överenskomna resultat.</small>
                     </div>
                     <div class="form-group">
                         <label for="service">Vilken tjänst är ni intresserade av?</label>

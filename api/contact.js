@@ -3,7 +3,8 @@ const WORK_ARRANGEMENTS = new Set([
     '',
     'fulltime-8h',
     'called-when-needed',
-    'self-directed-results'
+    'self-directed-results',
+    'discuss'
 ]);
 const SERVICES = new Set([
     '',
@@ -126,15 +127,17 @@ module.exports = async function contactHandler(req, res) {
 
     const workLabels = {
         '': 'Not specified',
-        'fulltime-8h': 'Fulltime (8h)',
-        'called-when-needed': 'Called when needed',
-        'self-directed-results': 'Self going with delivery of results'
+        'fulltime-8h': 'Full-time (8h/day)',
+        'called-when-needed': 'On call / as needed',
+        'self-directed-results': 'Self-directed, delivery of results',
+        discuss: 'Not sure yet / Let’s discuss'
     };
     const workLabelsSv = {
         '': 'Ej angivet',
-        'fulltime-8h': 'Heltid (8 timmar)',
+        'fulltime-8h': 'Heltid (8 h/dag)',
         'called-when-needed': 'Vid behov',
-        'self-directed-results': 'Självständigt arbete med resultatleverans'
+        'self-directed-results': 'Egen planering med leverans av resultat',
+        discuss: 'Osäker ännu / Låt oss prata'
     };
     const serviceLabels = lang === 'sv' ? SWEDISH_SERVICE_LABELS : SERVICE_LABELS;
     const emailText = [
