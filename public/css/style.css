@@ -293,8 +293,8 @@ body {
 }
 
 .hero-button-secondary {
-    border: 2px solid #fff;
-    background: transparent;
+    border: 3px solid #fff;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .hero-button-secondary:hover {
@@ -448,7 +448,7 @@ section h2 {
     justify-content: flex-end;
     gap: 0.35rem;
     min-height: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     color: var(--color-green);
     font-size: 0.9rem;
     font-weight: 700;
@@ -684,7 +684,9 @@ section h2 {
 }
 
 .portfolio-highlights {
-    margin-top: 3.5rem;
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid #e2e6ea;
     scroll-margin-top: 120px;
 }
 
