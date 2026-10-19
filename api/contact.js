@@ -32,7 +32,7 @@ const SERVICE_LABELS = {
     other: 'Other / not sure yet'
 };
 const SWEDISH_SERVICE_LABELS = {
-    'data-extraction': 'Datauttag från ritningar och modeller',
+    'data-extraction': 'Utsättningsdata från ritningar och modeller',
     'setting-out': 'Utsättning',
     'as-built-measurements': 'Relationsmätningar',
     'network-measurements': 'Nätverksmätningar',
