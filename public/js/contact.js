@@ -1,160 +1,150 @@
-// Contact Form Functionality
-function handleContactSubmit(event) {
+async function handleContactSubmit(event) {
     event.preventDefault();
+
+    const form = event.currentTarget;
     const isSwedish = document.documentElement.lang === 'sv';
-    
-    // Get form data
-    const formData = new FormData(event.target);
-    const formObject = Object.fromEntries(formData);
-    
-    // Validate form
+    const formObject = Object.fromEntries(new FormData(form));
+
     if (!validateForm(formObject)) {
         return;
     }
-    
-    // Show loading state
-    const submitBtn = event.target.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = isSwedish ? 'Skickar...' : 'Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual email service)
-    setTimeout(() => {
-        // Show success message
+
+    const submitButton = form.querySelector('.submit-btn');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = isSwedish ? 'Skickar...' : 'Sending...';
+
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                ...formObject,
+                lang: isSwedish ? 'sv' : 'en'
+            })
+        });
+        const result = await response.json();
+
+        if (!response.ok) {
+            showMessage(result.message, 'error');
+            return;
+        }
+
         showMessage(
             isSwedish
-                ? 'Tack! Ditt meddelande har skickats. Vi återkommer så snart vi kan.'
-                : 'Thank you! Your message has been sent successfully. We will get back to you soon.',
+                ? 'Tack! Vi har tagit emot er förfrågan och återkommer så snart vi kan.'
+                : 'Thank you, we’ve received your message. We’ll get back to you as soon as we can.',
             'success'
         );
-        
-        // Reset form
-        event.target.reset();
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
+        form.reset();
+    } catch (error) {
+        console.error('Contact form request failed:', error);
+        showMessage(
+            isSwedish
+                ? 'Det gick inte att skicka förfrågan just nu. Mejla oss på info@infinitymk.se.'
+                : 'We could not send your enquiry right now. Please email info@infinitymk.se.',
+            'error'
+        );
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+    }
 }
 
-// Form validation
 function validateForm(data) {
-    const errors = [];
     const isSwedish = document.documentElement.lang === 'sv';
-    
-    // Check required fields
+
     if (!data.name || data.name.trim().length < 2) {
-        errors.push(isSwedish ? 'Ange ett giltigt namn (minst 2 tecken).' : 'Please enter a valid name (minimum 2 characters)');
-    }
-    
-    if (!data.email || !isValidEmail(data.email)) {
-        errors.push(isSwedish ? 'Ange en giltig e-postadress.' : 'Please enter a valid email address');
-    }
-    
-    if (!data.message || data.message.trim().length < 10) {
-        errors.push(isSwedish ? 'Skriv ett mer utförligt meddelande (minst 10 tecken).' : 'Please enter a detailed message (minimum 10 characters)');
-    }
-    
-    // Show errors if any
-    if (errors.length > 0) {
-        showMessage(errors.join('<br>'), 'error');
+        showMessage(
+            isSwedish ? 'Ange ett giltigt namn (minst 2 tecken).' : 'Please enter a valid name (at least 2 characters).',
+            'error'
+        );
         return false;
     }
-    
+
+    if (!data.email || !isValidEmail(data.email)) {
+        showMessage(
+            isSwedish ? 'Ange en giltig e-postadress.' : 'Please enter a valid email address.',
+            'error'
+        );
+        return false;
+    }
+
+    if (!data.message || data.message.trim().length < 10) {
+        showMessage(
+            isSwedish ? 'Beskriv projektet med minst 10 tecken.' : 'Please describe the project in at least 10 characters.',
+            'error'
+        );
+        return false;
+    }
+
     return true;
 }
 
-// Email validation
 function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Show success/error messages
 function showMessage(message, type) {
-    // Remove existing messages
-    const existingMessage = document.querySelector('.message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
-    // Create new message
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${type}`;
-    messageDiv.innerHTML = message;
-    
-    // Insert before form
-    const form = document.getElementById('contactForm');
-    form.parentNode.insertBefore(messageDiv, form);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        if (messageDiv.parentNode) {
-            messageDiv.remove();
-        }
-    }, 5000);
+    const messageElement = document.getElementById('form-message');
+    messageElement.textContent = message || (
+        document.documentElement.lang === 'sv'
+            ? 'Något gick fel. Försök igen eller mejla oss på info@infinitymk.se.'
+            : 'Something went wrong. Please try again or email info@infinitymk.se.'
+    );
+    messageElement.className = `message ${type}`;
+    messageElement.setAttribute('role', type === 'error' ? 'alert' : 'status');
+    messageElement.hidden = false;
 }
 
-// Add smooth scrolling for contact links
-document.addEventListener('DOMContentLoaded', function() {
-    // Add click handlers for contact links
+document.addEventListener('DOMContentLoaded', () => {
     const contactLinks = document.querySelectorAll('a[href^="mailto:"], a[href^="tel:"]');
     contactLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Add visual feedback
+        link.addEventListener('click', function () {
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
             }, 150);
         });
     });
-    
-    // Add form field animations
+
     const formFields = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
     formFields.forEach(field => {
-        field.addEventListener('focus', function() {
+        field.addEventListener('focus', function () {
             this.parentNode.classList.add('focused');
         });
-        
-        field.addEventListener('blur', function() {
+
+        field.addEventListener('blur', function () {
             if (!this.value) {
                 this.parentNode.classList.remove('focused');
             }
         });
     });
-});
 
-// Optional: Add character counter for message field
-document.addEventListener('DOMContentLoaded', function() {
     const messageField = document.getElementById('message');
     if (messageField) {
-        messageField.addEventListener('input', function() {
-            const maxLength = 1000;
-            const currentLength = this.value.length;
-            const remaining = maxLength - currentLength;
-            
-            // Update character counter if it exists
+        messageField.addEventListener('input', function () {
+            const maxLength = Number(this.maxLength);
+            const remaining = maxLength - this.value.length;
             let counter = this.parentNode.querySelector('.char-counter');
+
             if (!counter) {
                 counter = document.createElement('div');
                 counter.className = 'char-counter';
                 counter.style.fontSize = '0.8rem';
-                counter.style.color = '#666';
                 counter.style.textAlign = 'right';
                 counter.style.marginTop = '0.5rem';
                 this.parentNode.appendChild(counter);
             }
-            
+
             counter.textContent = document.documentElement.lang === 'sv'
-                ? `${currentLength}/${maxLength} tecken`
-                : `${currentLength}/${maxLength} characters`;
-            
-            // Change color when approaching limit
-            if (remaining < 100) {
-                counter.style.color = remaining < 50 ? '#dc3545' : '#ffc107';
-            } else {
-                counter.style.color = '#666';
-            }
+                ? `${this.value.length}/${maxLength} tecken`
+                : `${this.value.length}/${maxLength} characters`;
+            counter.style.color = remaining < 100 ? (remaining < 50 ? '#dc3545' : '#ffc107') : '#666';
+        });
+
+        document.getElementById('contactForm').addEventListener('reset', () => {
+            setTimeout(() => messageField.dispatchEvent(new Event('input', { bubbles: true })), 0);
         });
     }
-}); 
+});

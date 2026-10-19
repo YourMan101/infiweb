@@ -16,7 +16,7 @@
             <div class="dropdown"><a href="/sv/index.html#about" class="dropdown-toggle">Om oss</a><div class="dropdown-content">
                 <a href="/sv/index.html#team">Team</a><a href="/sv/index.html#portfolio">Referenser</a><a href="/sv/more.html">Mer om oss</a>
             </div></div>
-            <a href="/sv/contact.html">Kontakt</a>
+            <a href="/sv/contact.html" aria-current="page">Kontakt</a>
         </div>
         <div class="language-switch" aria-label="Välj språk">
             <a href="/sv/contact.html" lang="sv" aria-current="page" aria-label="Svenska"><img src="/images/flag-sv.svg" alt=""><span>SV</span></a>
@@ -24,26 +24,38 @@
         </div>
     </nav>
 
-    <section class="contact-form-section" style="margin-top: 120px; padding: 3rem 5%;">
+    <section class="contact-form-section">
         <h2>Kontakta oss</h2>
-        <p class="contact-intro">Hör av dig till vårt team av mätningsexperter. Vi hjälper dig gärna med ditt infrastrukturprojekt.</p>
+        <p class="contact-intro">Berätta om ert projekt så hjälper vi er med utsättning, mätning och mängdberäkning.</p>
         <div class="contact-container">
             <div class="contact-info-sidebar">
-                <h3>Kom i kontakt</h3>
-                <div class="contact-item"><strong>E-post:</strong><a href="mailto:info@infinityMk.se">info@infinityMk.se</a></div>
-                <div class="contact-item"><strong>Telefon:</strong><a href="tel:+46768969580">+46768969580</a> / <a href="tel:+46768969591">+46768969591</a></div>
+                <h3>Kontaktuppgifter</h3>
+                <div class="contact-item"><strong>E-post:</strong><a href="mailto:info@infinitymk.se">info@infinitymk.se</a></div>
+                <div class="contact-item">
+                    <strong>Telefon:</strong>
+                    <span>Andrei Bob, chefsmätare</span>
+                    <a href="tel:+46768969591">+46 76 896 95 91</a>
+                    <span>Cristian Dan, seniormätare</span>
+                    <a href="tel:+46768969580">+46 76 896 95 80</a>
+                </div>
                 <div class="contact-item"><strong>LinkedIn:</strong><a href="https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/" target="_blank" rel="noopener noreferrer">Infinity Mätkonsult AB</a></div>
-                <h3>Våra tjänster</h3>
-                <ul class="services-list-contact">
-                    <li>Nätverksmätningar</li><li>Mängdberäkning</li><li>Drönarteknik</li><li>3D-modellering</li><li>Relationsmätningar</li>
-                </ul>
+                <div class="contact-item contact-address">
+                    <strong>Adress:</strong>
+                    <span>Kurvanskontorshotell AB<br>Månskärsvägen 10B<br>141 75 Kungens Kurva</span>
+                    <a href="https://maps.google.com/?q=Kurvanskontorshotell+AB%2C+M%C3%A5nsk%C3%A4rsv%C3%A4gen+10B%2C+141+75+Kungens+Kurva" target="_blank" rel="noopener noreferrer">Vägbeskrivning</a>
+                </div>
             </div>
             <div class="contact-form">
+                <p class="form-response-time">När ni skickar formuläret får vårt team er förfrågan via e-post. Vi återkommer så snart vi kan.</p>
                 <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                    <div class="form-group"><label for="name">Namn *</label><input type="text" id="name" name="name" required></div>
-                    <div class="form-group"><label for="email">E-postadress *</label><input type="email" id="email" name="email" required></div>
-                    <div class="form-group"><label for="phone">Telefonnummer</label><input type="tel" id="phone" name="phone"></div>
-                    <div class="form-group"><label for="company">Företag</label><input type="text" id="company" name="company"></div>
+                    <div class="contact-honeypot" aria-hidden="true">
+                        <label for="website">Lämna det här fältet tomt</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="form-group"><label for="name">Namn *</label><input type="text" id="name" name="name" maxlength="120" autocomplete="name" required></div>
+                    <div class="form-group"><label for="email">E-postadress *</label><input type="email" id="email" name="email" maxlength="254" autocomplete="email" required></div>
+                    <div class="form-group"><label for="phone">Telefonnummer</label><input type="tel" id="phone" name="phone" maxlength="50" autocomplete="tel"></div>
+                    <div class="form-group"><label for="company">Företag</label><input type="text" id="company" name="company" maxlength="150" autocomplete="organization"></div>
                     <div class="form-group">
                         <label for="work-arrangement">Välj önskat arbetssätt</label>
                         <select id="work-arrangement" name="work_arrangement">
@@ -54,29 +66,32 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="service">Vilken tjänst är du intresserad av?</label>
+                        <label for="service">Vilken tjänst är ni intresserade av?</label>
                         <select id="service" name="service">
                             <option value="">Välj en tjänst...</option>
+                            <option value="data-extraction">Datauttag från ritningar och modeller</option>
+                            <option value="setting-out">Utsättning</option>
+                            <option value="as-built-measurements">Relationsmätningar</option>
                             <option value="network-measurements">Nätverksmätningar</option>
-                            <option value="quantities-calculation">Mängdberäkning</option>
-                            <option value="drone-technology">Drönarteknik</option>
-                            <option value="3d-modeling">3D-modellering</option>
-                            <option value="as-built-surveys">Relationsmätningar</option>
-                            <option value="other">Annat</option>
+                            <option value="control-measurements">Kontrollmätningar</option>
+                            <option value="machine-control-modeling">3D-modellering för maskinstyrning</option>
+                            <option value="quantity-calculation">Mängdberäkning</option>
+                            <option value="drone-surveys">Drönarmätning och volymberäkning av upplag</option>
+                            <option value="documentation-payment-certificates">Dokumentation och betalningsunderlag</option>
+                            <option value="other">Annat / osäker ännu</option>
                         </select>
                     </div>
-                    <div class="form-group"><label for="message">Beskriv projektet *</label><textarea id="message" name="message" rows="5" required placeholder="Beskriv gärna projektets behov..."></textarea></div>
+                    <div class="form-group"><label for="message">Beskriv projektet *</label><textarea id="message" name="message" rows="7" maxlength="4000" required placeholder="Beskriv gärna projektets behov..."></textarea><small class="form-help">Ange gärna plats, typ av arbete och önskat startdatum.</small></div>
+                    <p class="privacy-notice">Vi använder uppgifterna för att besvara er förfrågan. <a href="/sv/privacy.html">Läs vår integritetspolicy</a>.</p>
+                    <p id="form-message" class="message" role="status" aria-live="polite" hidden></p>
                     <button type="submit" class="submit-btn">Skicka meddelande</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer id="contact"><div class="contact-info">
-        <h3>Kontakta oss</h3><p>E-post: info@infinityMk.se</p><p>Telefon: Andrei Bob +46768969591 / Cristian Dan +46768969580</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/" target="_blank" rel="noopener noreferrer">Infinity Mätkonsult AB</a></p>
-        <p><strong>Organisationsnummer:</strong> 559397-3190</p><p><strong>Adress:</strong> Kurvanskontorshotell AB<br>Månskärsvägen 10B<br>14175 Kungens Kurva</p>
-        <a class="footer-contact-button" href="/sv/contact.html">Skicka ett meddelande</a>
+    <footer class="contact-page-footer"><div class="contact-info">
+        <p><strong>Organisationsnummer:</strong> 559397-3190</p><p><strong>Adress:</strong> Kurvanskontorshotell AB, Månskärsvägen 10B, 141 75 Kungens Kurva</p>
         <p class="copyright">&copy; 2026 Infinity Mätkonsult AB. Alla rättigheter förbehållna.</p>
     </div></footer>
     <script src="/js/main.js"></script>

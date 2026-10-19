@@ -1,13 +1,17 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+const contactHandler = require('./api/contact');
 
 console.log('Starting server setup...');
 
 // Serve static files from the 'public' directory
+app.use(express.json({ limit: '32kb' }));
 app.use(express.static('public'));
 console.log('Static file middleware configured...');
+
+app.post('/api/contact', contactHandler);
 
 // Route for the home page
 app.get('/', (req, res) => {

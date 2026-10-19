@@ -9,11 +9,13 @@
 3. **Click "New Project"**
 4. **Import your repository**: `YourMan101/infiweb`
 5. **Configure settings**:
-   - Build Command: `npm install`
+   - Root Directory: repository root (`./`) so Vercel can deploy the contact API in `/api`
+   - Build Command: use the existing `vercel.json` setting
    - Output Directory: `public`
    - Install Command: `npm install`
 6. **Click "Deploy"**
 7. **Your site will be live** at: `https://infiweb.vercel.app`
+8. Configure `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` in Vercel Environment Variables as described in [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md).
 
 ### **Option 2: Netlify (Also Easy)**
 
@@ -26,6 +28,7 @@
    - Publish directory: `public`
 6. **Click "Deploy site"**
 7. **Your site will be live** at: `https://amazing-site-123.netlify.app`
+   - Note: the contact form API in `/api/contact.js` is configured for Vercel. A Netlify deployment needs an equivalent Netlify Function before form submissions can be delivered.
 
 ### **Option 3: GitHub Pages**
 
@@ -36,6 +39,7 @@
 5. **Folder**: / (root)
 6. **Click Save**
 7. **Your site will be live** at: `https://yourusername.github.io/infiweb`
+   - Note: GitHub Pages is static hosting and does not run `/api/contact.js`; the contact form requires a serverless endpoint to send messages.
 
 ## 📋 Pre-Deployment Checklist
 

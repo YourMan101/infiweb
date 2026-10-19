@@ -24,7 +24,7 @@
                     <a href="/more.html">More</a>
                 </div>
             </div>
-            <a href="/#contact">Contact</a>
+            <a href="/contact.html" aria-current="page">Contact</a>
         </div>
         <div class="language-switch" aria-label="Choose language">
             <a href="/sv/contact.html" lang="sv" aria-label="Svenska">
@@ -39,56 +39,60 @@
     </nav>
 
     <!-- Contact Form Section -->
-    <section class="contact-form-section" style="margin-top: 120px; padding: 3rem 5%;">
+    <section class="contact-form-section">
         <h2>Contact Us</h2>
-        <p class="contact-intro">Get in touch with our team of surveying experts. We're here to help with your infrastructure projects.</p>
+        <p class="contact-intro">Tell us about your project, and we’ll help with setting out, surveying and quantity calculation.</p>
         
         <div class="contact-container">
             <div class="contact-info-sidebar">
-                <h3>Get In Touch</h3>
+                <h3>Contact details</h3>
                 <div class="contact-item">
                     <strong>Email:</strong>
-                    <a href="mailto:info@infinityMk.se">info@infinityMk.se</a>
+                    <a href="mailto:info@infinitymk.se">info@infinitymk.se</a>
                 </div>
                 <div class="contact-item">
                     <strong>Phone:</strong>
-                    <a href="tel:+46768969580">+46768969580</a> / <a href="tel:+46768969591">+46768969591</a>
+                    <span>Andrei Bob, Chief Surveyor</span>
+                    <a href="tel:+46768969591">+46 76 896 95 91</a>
+                    <span>Cristian Dan, Senior Surveyor</span>
+                    <a href="tel:+46768969580">+46 76 896 95 80</a>
                 </div>
                 <div class="contact-item">
                     <strong>LinkedIn:</strong>
-                    <a href="https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/" target="_blank">Infinity Mätkonsult AB</a>
+                    <a href="https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/" target="_blank" rel="noopener noreferrer">Infinity Mätkonsult AB</a>
                 </div>
-                
-                <h3>Our Services</h3>
-                <ul class="services-list-contact">
-                    <li>Network Measurements</li>
-                    <li>Quantities Calculation</li>
-                    <li>Drone Technology</li>
-                    <li>3D Modeling</li>
-                    <li>As-Built Surveys</li>
-                </ul>
+                <div class="contact-item contact-address">
+                    <strong>Address:</strong>
+                    <span>Kurvanskontorshotell AB<br>Månskärsvägen 10B<br>141 75 Kungens Kurva</span>
+                    <a href="https://maps.google.com/?q=Kurvanskontorshotell+AB%2C+M%C3%A5nsk%C3%A4rsv%C3%A4gen+10B%2C+141+75+Kungens+Kurva" target="_blank" rel="noopener noreferrer">Get directions</a>
+                </div>
             </div>
             
             <div class="contact-form">
+                <p class="form-response-time">After you send the form, we’ll email your enquiry to our team and get back to you as soon as we can.</p>
                 <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="contact-honeypot" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" maxlength="120" autocomplete="name" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" maxlength="50" autocomplete="tel">
                     </div>
                     
                     <div class="form-group">
                         <label for="company">Company</label>
-                        <input type="text" id="company" name="company">
+                        <input type="text" id="company" name="company" maxlength="150" autocomplete="organization">
                     </div>
 
                     <div class="form-group">
@@ -102,23 +106,30 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="service">Service Interest</label>
+                        <label for="service">Which service are you interested in?</label>
                         <select id="service" name="service">
                             <option value="">Select a service...</option>
+                            <option value="data-extraction">Data Extraction from Designs and Models</option>
+                            <option value="setting-out">Setting Out</option>
+                            <option value="as-built-measurements">As-Built Measurements</option>
                             <option value="network-measurements">Network Measurements</option>
-                            <option value="quantities-calculation">Quantities Calculation</option>
-                            <option value="drone-technology">Drone Technology</option>
-                            <option value="3d-modeling">3D Modeling</option>
-                            <option value="as-built-surveys">As-Built Surveys</option>
-                            <option value="other">Other</option>
+                            <option value="control-measurements">Control Measurements</option>
+                            <option value="machine-control-modeling">3D Modeling for Machine Control</option>
+                            <option value="quantity-calculation">Quantity Calculation</option>
+                            <option value="drone-surveys">Drone Surveys &amp; Stockpile Volumes</option>
+                            <option value="documentation-payment-certificates">Documentation &amp; Payment Certificates</option>
+                            <option value="other">Other / not sure yet</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
                         <label for="message">Project Details *</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Please describe your project requirements..."></textarea>
+                        <textarea id="message" name="message" rows="7" maxlength="4000" required placeholder="Please describe your project requirements..."></textarea>
+                        <small class="form-help">Please include the location, type of work and desired start date.</small>
                     </div>
                     
+                    <p class="privacy-notice">We use the information you provide to respond to your enquiry. <a href="/privacy.html">Read our privacy notice</a>.</p>
+                    <p id="form-message" class="message" role="status" aria-live="polite" hidden></p>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
@@ -126,15 +137,10 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer class="contact-page-footer">
         <div class="contact-info">
-            <h3>Contact Us</h3>
-            <p>Email: info@infinityMk.se</p>
-            <p>Phone: Andrei Bob +46768969591 / Cristian Dan +46768969580</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/company/infinity-m%C3%A4tkonsult-ab/about/" target="_blank">Infinity Mätkonsult AB</a></p>
             <p><strong>Organisation number:</strong> 559397-3190</p>
-            <p><strong>Address:</strong> Kurvanskontorshotell AB<br>Månskärsvägen 10B<br>14175 Kungens Kurva</p>
-            <a class="footer-contact-button" href="/contact.html">Send us a message</a>
+            <p><strong>Address:</strong> Kurvanskontorshotell AB, Månskärsvägen 10B, 141 75 Kungens Kurva</p>
             <p class="copyright">&copy; 2026 Infinity Mätkonsult AB. All rights reserved.</p>
         </div>
     </footer>
