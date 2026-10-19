@@ -628,6 +628,7 @@ section h2 {
 }
 
 .recent-projects-grid .project-item {
+    position: relative;
     display: block;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -636,6 +637,22 @@ section h2 {
 .recent-projects-grid .project-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 20px rgba(0,0,0,0.14);
+}
+
+.project-thumb {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.recent-projects-grid .project-item:has(.project-thumb) .project-type,
+.recent-projects-grid .project-item:has(.project-thumb) h3 {
+    padding-right: 5rem;
 }
 
 .recent-projects-grid .project-item > p {
