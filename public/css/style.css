@@ -1761,7 +1761,7 @@ section {
 } 
 
 /* Contact Form Styles */
-.contact-form-section {
+section.contact-form-section {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
