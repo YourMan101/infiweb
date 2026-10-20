@@ -146,7 +146,7 @@ infiweb/
 
 Infinity Mätkonsult AB
 
-Email: info@infinityMk.se
+Email: info@infinitymk.se
 
 Phone: +46768969580 / +46768969591
 

@@ -1,3 +1,5 @@
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xayrvaap';
+
 async function handleContactSubmit(event) {
     event.preventDefault();
 
@@ -15,19 +17,23 @@ async function handleContactSubmit(event) {
     submitButton.textContent = isSwedish ? 'Skickar...' : 'Sending...';
 
     try {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                ...formObject,
-                lang: isSwedish ? 'sv' : 'en'
-            })
-        });
-        const result = await response.json();
+        // Bots fill the hidden field; pretend success without sending.
+        if (!formObject.website) {
+            const payload = { ...formObject, language: isSwedish ? 'sv' : 'en', _subject: 'Website enquiry from ' + formObject.name };
+            delete payload.website;
+            form.querySelectorAll('select').forEach(select => {
+                payload[select.name] = select.value ? select.options[select.selectedIndex].text : '';
+            });
 
-        if (!response.ok) {
-            showMessage(result.message, 'error');
-            return;
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error('Formspree responded with ' + response.status);
+            }
         }
 
         showMessage(
