@@ -1309,6 +1309,102 @@ section {
     line-height: 1.6;
 }
 
+.resaro-compare {
+    --pos: 50%;
+    position: relative;
+    max-width: 1000px;
+    margin: 2.5rem auto 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+    user-select: none;
+}
+
+.resaro-compare img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.resaro-compare-before {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+.resaro-compare-tag {
+    position: absolute;
+    top: 1rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    background: rgba(31, 42, 55, 0.75);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.resaro-compare-tag--before { left: 1rem; }
+.resaro-compare-tag--after { right: 1rem; }
+
+.resaro-compare-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 3px;
+    margin-left: -1.5px;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.resaro-compare-handle::after {
+    content: "\2194";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-green);
+    color: #fff;
+    font-size: 1.4rem;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.resaro-compare-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    touch-action: pan-y;
+}
+
+.resaro-compare:focus-within .resaro-compare-handle::after {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+.resaro-compare-hint {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+}
+
 .resaro-timeline {
     position: relative;
     display: grid;

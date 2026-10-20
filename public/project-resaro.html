@@ -37,6 +37,18 @@
             <p class="project-year">Project timeline · 2026</p>
             <p class="resaro-intro">A visual record of road works in Resarö, from 2 February to 6 October 2026.</p>
 
+            <div class="resaro-compare">
+                <img src="/images/Resar%C3%B6/optimized/resaroaf.jpg" alt="Resarö road junction on 6 October 2026" decoding="async">
+                <div class="resaro-compare-before">
+                    <img src="/images/Resar%C3%B6/optimized/resarobf.jpg" alt="Resarö road junction on 2 February 2026" decoding="async">
+                </div>
+                <span class="resaro-compare-tag resaro-compare-tag--before">2026-02-02</span>
+                <span class="resaro-compare-tag resaro-compare-tag--after">2026-10-06</span>
+                <div class="resaro-compare-handle"></div>
+                <input type="range" class="resaro-compare-range" min="0" max="100" value="50" aria-label="Compare the junction on 2 February and 6 October 2026">
+            </div>
+            <p class="resaro-compare-hint">Drag the slider to compare the junction before and after.</p>
+
             <div class="resaro-timeline" aria-label="Resarö project timeline">
                 <article class="resaro-timeline-item resaro-timeline-item--left">
                     <time datetime="2026-02-02">2026-02-02</time>
@@ -76,6 +88,7 @@
             <p class="copyright">&copy; 2026 Infinity Mätkonsult AB. All rights reserved.</p>
         </div>
     </footer>
+    <script src="/js/resaro-compare.js"></script>
     <script src="/js/resaro-gallery.js" data-close="Close" data-prev="Previous photo" data-next="Next photo"></script>
 </body>
 </html>
