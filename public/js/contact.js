@@ -1,4 +1,4 @@
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xayrvaap';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzedqldd';
 
 async function handleContactSubmit(event) {
     event.preventDefault();
