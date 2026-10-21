@@ -794,11 +794,11 @@ section h2 {
     height: 100%;
 }
 
-.team-member:nth-child(4) {
+.team-member:nth-child(1) {
     grid-column: 2 / span 2;
 }
 
-.team-member:nth-child(5) {
+.team-member:nth-child(2) {
     grid-column: 4 / span 2;
 }
 
@@ -1112,10 +1112,9 @@ section.closing-cta {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .team-member {
-        grid-column: span 2;
-    }
-
+    .team-member,
+    .team-member:nth-child(1),
+    .team-member:nth-child(2),
     .team-member:nth-child(4) {
         grid-column: auto / span 2;
     }
@@ -1163,6 +1162,8 @@ section.closing-cta {
     }
 
     .team-member,
+    .team-member:nth-child(1),
+    .team-member:nth-child(2),
     .team-member:nth-child(4),
     .team-member:nth-child(5) {
         grid-column: 1 / -1;
