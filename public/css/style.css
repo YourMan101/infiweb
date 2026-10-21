@@ -2254,6 +2254,23 @@ section h2,
 
 footer {
     background-color: var(--color-heading);
+    position: relative;
+}
+
+.back-to-top {
+    position: absolute;
+    right: 5%;
+    bottom: 1.25rem;
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 .btn-back,
