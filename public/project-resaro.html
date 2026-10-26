@@ -33,48 +33,76 @@
 
     <main>
         <section class="project-detail resaro-project">
+            <p class="resaro-breadcrumb"><a href="/#projects">Projects</a> › Resarö</p>
             <h2>Resarö</h2>
-            <p class="project-year">Project timeline · 2026</p>
-            <p class="resaro-intro">A visual record of road works in Resarö, from 2 February to 6 October 2026.</p>
+            <p class="project-year">Road works · 2026</p>
+            <p class="resaro-intro">Road works on Resarö with a new road layout, junction and bus turnaround. Follow the progress through our drone photos from February to October 2026.</p>
 
-            <div class="resaro-compare">
-                <img src="/images/Resar%C3%B6/optimized/resaroaf.jpg" alt="Resarö road junction on 6 October 2026" decoding="async">
-                <div class="resaro-compare-before">
-                    <img src="/images/Resar%C3%B6/optimized/resarobf.jpg" alt="Resarö road junction on 2 February 2026" decoding="async">
-                </div>
-                <span class="resaro-compare-tag resaro-compare-tag--before">2026-02-02</span>
-                <span class="resaro-compare-tag resaro-compare-tag--after">2026-10-06</span>
-                <div class="resaro-compare-handle"></div>
-                <input type="range" class="resaro-compare-range" min="0" max="100" value="50" aria-label="Compare the junction on 2 February and 6 October 2026">
-            </div>
-            <p class="resaro-compare-hint">Drag the slider to compare the junction before and after.</p>
+            <dl class="resaro-facts">
+                <div><dt>Location</dt><dd>Resarö, Vaxholm</dd></div>
+                <div><dt>Period</dt><dd>Feb 2026 – ongoing</dd></div>
+                <div><dt>Our role</dt><dd>Setting out, drone survey</dd></div>
+            </dl>
 
-            <div class="resaro-timeline" aria-label="Resarö project timeline">
-                <article class="resaro-timeline-item resaro-timeline-item--left">
-                    <time datetime="2026-02-02">2026-02-02</time>
-                    <figure>
-                        <button type="button" class="resaro-photo" data-extra-src="/images/Resar%C3%B6/optimized/r1.jpg" data-extra-alt="Additional aerial view of the Resarö road junction, 2 February 2026" aria-label="Open photos from 2 February 2026">
-                            <img src="/images/Resar%C3%B6/optimized/resarobf.jpg" alt="Aerial view of the Resarö road junction on 2 February 2026" fetchpriority="high" decoding="async">
-                        </button>
-                        <figcaption>Road junction before the works · Click to see more</figcaption>
-                    </figure>
+            <h3 class="resaro-locations-title">Follow the project by location</h3>
+            <p class="resaro-locations-intro">Each location has its own before and after comparison.</p>
+
+            <div class="resaro-cards">
+                <article class="resaro-card">
+                    <div class="resaro-card-preview">
+                        <img src="/images/Resar%C3%B6/optimized/resarobf.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="/images/Resar%C3%B6/optimized/resaroaf.jpg" alt="" loading="lazy" decoding="async">
+                        <span class="resaro-card-tag resaro-card-tag--before">Before</span>
+                        <span class="resaro-card-tag resaro-card-tag--after">After</span>
+                    </div>
+                    <div class="resaro-card-body">
+                        <p class="resaro-card-meta">2 photo dates · Feb – Oct 2026</p>
+                        <h4>Junction</h4>
+                        <p>Resarövägen junction, new road layout and bus stop.</p>
+                        <button type="button" class="resaro-view" data-title="Junction" data-before="/images/Resar%C3%B6/optimized/resarobf.jpg" data-after="/images/Resar%C3%B6/optimized/resaroaf.jpg" data-before-date="2026-02-02" data-after-date="2026-10-06" data-before-alt="Resarö junction on 2 February 2026" data-after-alt="Resarö junction on 6 October 2026">View before and after →</button>
+                    </div>
                 </article>
-                <article class="resaro-timeline-item resaro-timeline-item--right">
-                    <time datetime="2026-10-06">2026-10-06</time>
-                    <figure>
-                        <button type="button" class="resaro-photo" data-extra-src="/images/Resar%C3%B6/optimized/r2.jpg" data-extra-alt="Additional aerial view of the Resarö road junction, 6 October 2026" aria-label="Open photos from 6 October 2026">
-                            <img src="/images/Resar%C3%B6/optimized/resaroaf.jpg" alt="Aerial view of the Resarö road junction on 6 October 2026" loading="lazy" decoding="async">
-                        </button>
-                        <figcaption>Road junction at a later project stage · Click to see more</figcaption>
-                    </figure>
+                <article class="resaro-card">
+                    <div class="resaro-card-preview">
+                        <img src="/images/Resar%C3%B6/optimized/r1.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="/images/Resar%C3%B6/optimized/r2.jpg" alt="" loading="lazy" decoding="async">
+                        <span class="resaro-card-tag resaro-card-tag--before">Before</span>
+                        <span class="resaro-card-tag resaro-card-tag--after">After</span>
+                    </div>
+                    <div class="resaro-card-body">
+                        <p class="resaro-card-meta">2 photo dates · Feb – Oct 2026</p>
+                        <h4>Bus turnaround</h4>
+                        <p>Turning loop and bus stop, from groundwork to asphalt.</p>
+                        <button type="button" class="resaro-view" data-title="Bus turnaround" data-before="/images/Resar%C3%B6/optimized/r1.jpg" data-after="/images/Resar%C3%B6/optimized/r2.jpg" data-before-date="2026-02-02" data-after-date="2026-10-06" data-before-alt="Resarö bus turnaround on 2 February 2026" data-after-alt="Resarö bus turnaround on 6 October 2026">View before and after →</button>
+                    </div>
                 </article>
             </div>
+
+            <div class="resaro-divider"></div>
 
             <div class="back-button">
                 <a href="/#projects" class="btn-back">← Back to Projects</a>
             </div>
         </section>
     </main>
+
+    <dialog class="resaro-dialog" aria-labelledby="resaro-dialog-title">
+        <div class="resaro-dialog-head">
+            <h3 id="resaro-dialog-title"></h3>
+            <button type="button" class="resaro-dialog-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="resaro-compare">
+            <img class="js-after" src="" alt="" decoding="async">
+            <div class="resaro-compare-before">
+                <img class="js-before" src="" alt="" decoding="async">
+            </div>
+            <span class="resaro-compare-tag resaro-compare-tag--before js-before-date"></span>
+            <span class="resaro-compare-tag resaro-compare-tag--after js-after-date"></span>
+            <div class="resaro-compare-handle"></div>
+            <input type="range" class="resaro-compare-range" min="0" max="100" value="50" aria-label="Compare before and after">
+        </div>
+        <p class="resaro-compare-hint">Drag the slider to compare before and after.</p>
+    </dialog>
 
     <footer id="contact">
         <div class="contact-info">
@@ -90,6 +118,5 @@
     <a href="#top" class="back-to-top">To the top <span aria-hidden="true">&uarr;</span></a>
     </footer>
     <script src="/js/resaro-compare.js"></script>
-    <script src="/js/resaro-gallery.js" data-close="Close" data-prev="Previous photo" data-next="Next photo"></script>
 </body>
 </html>

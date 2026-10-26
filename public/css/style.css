@@ -1328,6 +1328,211 @@ section {
     line-height: 1.6;
 }
 
+.project-detail.resaro-project {
+    max-width: 940px;
+}
+
+.resaro-project h2,
+.resaro-project .project-year,
+.resaro-project .resaro-intro {
+    text-align: left;
+    margin-left: 0;
+}
+
+.resaro-project .project-year {
+    margin-bottom: 1.25rem;
+}
+
+.resaro-breadcrumb {
+    font-size: 0.85rem;
+    color: #4a5568;
+    margin-bottom: 1.25rem;
+}
+
+.resaro-breadcrumb a {
+    color: var(--color-green);
+    text-decoration: none;
+}
+
+.resaro-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.resaro-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0 3rem;
+    padding: 1.5rem 1.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.resaro-facts dt {
+    color: var(--color-green);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.resaro-facts dd {
+    margin: 0;
+    color: var(--color-heading);
+}
+
+.resaro-locations-title {
+    color: var(--color-heading);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.resaro-locations-intro {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.resaro-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.resaro-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.resaro-card-preview {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 180px;
+}
+
+.resaro-card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.resaro-card-tag {
+    position: absolute;
+    bottom: 0.6rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.resaro-card-tag--before { left: 0.75rem; }
+.resaro-card-tag--after { right: 0.75rem; }
+
+.resaro-card-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.resaro-card-meta {
+    color: var(--color-green);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.resaro-card-body h4 {
+    color: var(--color-heading);
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.resaro-card-body p:not(.resaro-card-meta) {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+}
+
+.resaro-view {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--color-green);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--color-green);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.resaro-view:hover,
+.resaro-view:focus-visible {
+    background: var(--color-green);
+    color: #fff;
+}
+
+.resaro-divider {
+    width: 64px;
+    height: 4px;
+    margin: 3rem 0 0;
+    border-radius: 2px;
+    background: var(--color-green);
+}
+
+.resaro-dialog {
+    width: min(1100px, 94vw);
+    max-height: 94vh;
+    margin: auto;
+    padding: 1rem 1.25rem 1rem;
+    border: 0;
+    border-radius: 10px;
+    background: #fff;
+    overflow: auto;
+}
+
+.resaro-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.resaro-dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.resaro-dialog-head h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: 1.3rem;
+}
+
+.resaro-dialog-close {
+    border: 0;
+    background: transparent;
+    color: var(--color-heading);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.resaro-dialog .resaro-compare {
+    margin: 0 auto;
+    max-width: calc((94vh - 9rem) * 4 / 3);
+}
+
+@media (max-width: 720px) {
+    .resaro-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 .resaro-compare {
     --pos: 50%;
     position: relative;
