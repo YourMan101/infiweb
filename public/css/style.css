@@ -1583,6 +1583,11 @@ section {
     pointer-events: none;
 }
 
+.resaro-compare img.is-contained {
+    object-fit: contain;
+    background: #fff;
+}
+
 .resaro-compare-before {
     position: absolute;
     inset: 0;

@@ -23,8 +23,10 @@
     function showStage(stage, button) {
         before.src = stage.before;
         before.alt = stage.beforeAlt;
+        before.classList.toggle('is-contained', stage.beforeFit === 'contain');
         after.src = stage.after;
         after.alt = stage.afterAlt;
+        after.classList.toggle('is-contained', stage.afterFit === 'contain');
         beforeDate.textContent = stage.beforeDate;
         afterDate.textContent = stage.afterDate;
         range.value = 50;
