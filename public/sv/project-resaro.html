@@ -107,12 +107,14 @@
         </div>
         <div class="resaro-stage-list" role="group" aria-label="Välj jämförelsesteg"></div>
         <div class="resaro-compare">
-            <img class="js-after" src="" alt="" decoding="async">
-            <div class="resaro-compare-before">
-                <img class="js-before" src="" alt="" decoding="async">
+            <div class="resaro-compare-layer resaro-compare-after">
+                <img class="js-after" src="" alt="" decoding="async">
+                <span class="resaro-compare-tag resaro-compare-tag--after js-after-date"></span>
             </div>
-            <span class="resaro-compare-tag resaro-compare-tag--before js-before-date"></span>
-            <span class="resaro-compare-tag resaro-compare-tag--after js-after-date"></span>
+            <div class="resaro-compare-layer resaro-compare-before">
+                <img class="js-before" src="" alt="" decoding="async">
+                <span class="resaro-compare-tag resaro-compare-tag--before js-before-date"></span>
+            </div>
             <div class="resaro-compare-handle"></div>
             <input type="range" class="resaro-compare-range" min="0" max="100" value="50" aria-label="Jämför före och efter">
         </div>

@@ -15,15 +15,21 @@
     var title = dialog.querySelector('#resaro-dialog-title');
     var before = dialog.querySelector('.js-before');
     var after = dialog.querySelector('.js-after');
+    var beforeLayer = dialog.querySelector('.resaro-compare-before');
+    var afterLayer = dialog.querySelector('.resaro-compare-after');
     var beforeDate = dialog.querySelector('.js-before-date');
     var afterDate = dialog.querySelector('.js-after-date');
     var stageList = dialog.querySelector('.resaro-stage-list');
     var opener = null;
 
     function showStage(stage, button) {
+        beforeLayer.style.setProperty('--stage-image', 'url("' + stage.before + '")');
+        beforeLayer.classList.toggle('is-contained', stage.beforeFit === 'contain');
         before.src = stage.before;
         before.alt = stage.beforeAlt;
         before.classList.toggle('is-contained', stage.beforeFit === 'contain');
+        afterLayer.style.setProperty('--stage-image', 'url("' + stage.after + '")');
+        afterLayer.classList.toggle('is-contained', stage.afterFit === 'contain');
         after.src = stage.after;
         after.alt = stage.afterAlt;
         after.classList.toggle('is-contained', stage.afterFit === 'contain');
