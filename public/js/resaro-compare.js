@@ -15,21 +15,52 @@
     var title = dialog.querySelector('#resaro-dialog-title');
     var before = dialog.querySelector('.js-before');
     var after = dialog.querySelector('.js-after');
+    var beforeDate = dialog.querySelector('.js-before-date');
+    var afterDate = dialog.querySelector('.js-after-date');
+    var stageList = dialog.querySelector('.resaro-stage-list');
     var opener = null;
+
+    function showStage(stage, button) {
+        before.src = stage.before;
+        before.alt = stage.beforeAlt;
+        after.src = stage.after;
+        after.alt = stage.afterAlt;
+        beforeDate.textContent = stage.beforeDate;
+        afterDate.textContent = stage.afterDate;
+        range.value = 50;
+        range.dispatchEvent(new Event('input'));
+        stageList.querySelectorAll('button').forEach(function (stageButton) {
+            var selected = stageButton === button;
+            stageButton.classList.toggle('is-active', selected);
+            stageButton.setAttribute('aria-pressed', String(selected));
+        });
+    }
 
     document.querySelectorAll('.resaro-view').forEach(function (button) {
         button.addEventListener('click', function () {
             var d = button.dataset;
             opener = button;
             title.textContent = d.title;
-            before.src = d.before;
-            before.alt = d.beforeAlt;
-            after.src = d.after;
-            after.alt = d.afterAlt;
-            dialog.querySelector('.js-before-date').textContent = d.beforeDate;
-            dialog.querySelector('.js-after-date').textContent = d.afterDate;
-            range.value = 50;
-            range.dispatchEvent(new Event('input'));
+            stageList.replaceChildren();
+            var stages = d.stages ? JSON.parse(d.stages) : [{
+                label: d.beforeDate + ' → ' + d.afterDate,
+                before: d.before,
+                after: d.after,
+                beforeDate: d.beforeDate,
+                afterDate: d.afterDate,
+                beforeAlt: d.beforeAlt,
+                afterAlt: d.afterAlt
+            }];
+            if (stages.length > 1) {
+                stages.forEach(function (stage) {
+                    var stageButton = document.createElement('button');
+                    stageButton.type = 'button';
+                    stageButton.textContent = stage.label;
+                    stageButton.addEventListener('click', function () { showStage(stage, stageButton); });
+                    stageList.appendChild(stageButton);
+                });
+            }
+            showStage(stages[0], stageList.querySelector('button'));
             dialog.showModal();
             range.focus();
         });
