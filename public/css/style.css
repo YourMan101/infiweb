@@ -2534,6 +2534,37 @@ footer {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    .service-card-front {
+        grid-template-rows: 2.75rem auto 1fr auto;
+        padding: 1.5rem;
+        row-gap: 0.25rem;
+    }
+
+    footer {
+        padding-bottom: 0;
+    }
+
+    .back-to-top {
+        position: static;
+        display: block;
+        padding: 0.5rem 5% 1.25rem;
+        text-align: right;
+    }
+
+    .resaro-stage-list {
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+    }
+
+    .resaro-stage-list button {
+        flex: 1 1 0;
+        padding: 0.55rem 0.3rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+}
+
 .btn-back,
 .submit-btn {
     background-color: var(--color-green);
