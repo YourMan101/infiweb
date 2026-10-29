@@ -80,14 +80,14 @@ const teamMembers = {
         image: "/images/Andrei.png",
         bio: "Seasoned professional with extensive experience in surveying and quantity calculations. Co-founder bringing over a decade of expertise in infrastructure projects.",
         expertise: [
-            "Chief Surveyor with 10+ years experience",
+            "Chief Surveyor with 10+ years of experience",
             "Excel wizard specializing in complex calculations",
             "Quantity surveying expert",
-            "Behorighetstyp I certified professional",
+            "Behörighetstyp I certified professional",
             "Technical expert and strategic leader",
             "Co-founder of Infinity Mätkonsult AB"
         ],
-        qualifications: "Behorighetstyp I certified professional with authority in surveying standards. Andrei's technical expertise, Excel mastery, and strategic leadership drive our surveying operations.",
+        qualifications: "Behörighetstyp I certified professional with authority in surveying standards. Andrei's technical expertise, Excel mastery, and strategic leadership drive our surveying operations.",
         experience: "10+ years in Romania, 5 years in Trafikverket projects in Sweden.",
         languages: "Romanian, English, Swedish.",
         projects: "Recent projects include E4 Förbifart FSE 215 and E4 Förbifart FSE 101."
@@ -96,13 +96,13 @@ const teamMembers = {
         name: "Cristian Dan",
         role: "SENIOR SURVEYOR & CO-FOUNDER",
         image: "/images/Cristian.png",
-        bio: "Senior surveyor with deep expertise in advanced surveying techniques and project management. Co-founder ensuring highest standards of accuracy and efficiency.",
+        bio: "Senior surveyor with deep expertise in advanced surveying techniques and project management. Co-founder ensuring the highest standards of accuracy and efficiency.",
         expertise: [
             "Senior Surveyor with specialized training",
             "Project management and coordination",
             "Advanced surveying equipment operation",
             "High-stakes environments: bridges, tunnels, railroads",
-            "Behorighetstyp I certified professional",
+            "Behörighetstyp I certified professional",
             "Co-founder of Infinity Mätkonsult AB"
         ],
         qualifications: "Specializes in high-stakes environments including bridges, tunnels, and railroads. Behorighetstyp I certified with expertise across multiple surveying disciplines.",
@@ -112,7 +112,7 @@ const teamMembers = {
     },
     chakad: {
         name: "Chakad Bozorgmehr",
-        role: "BIM & CAD EXPERT",
+        role: "BIM & CAD Specialist",
         image: "/images/team3.png",
         bio: "BIM and CAD specialist bringing cutting-edge technology to surveying projects. Expertise in Building Information Modeling ensures precise and efficient project delivery.",
         expertise: [
@@ -200,7 +200,7 @@ const swedishTeamMembers = {
         projects: "Specialiserad på storskaliga infrastrukturprojekt och teamledning."
     },
     chakad: {
-        role: "BIM- & CAD-EXPERT",
+        role: "BIM- & CAD-specialist",
         bio: "BIM- och CAD-specialist som tillför modern teknik till mätprojekt. Kompetens inom byggnadsinformationsmodellering bidrar till noggranna och effektiva projektleveranser.",
         expertise: [
             "Expert på BIM (byggnadsinformationsmodellering)",
