@@ -1343,6 +1343,14 @@ section {
     margin-bottom: 1.25rem;
 }
 
+.resaro-project .resaro-external-link {
+    color: var(--color-green);
+}
+
+.resaro-project .resaro-external-link:hover {
+    color: var(--color-green-hover);
+}
+
 .resaro-breadcrumb {
     font-size: 0.85rem;
     color: #4a5568;
