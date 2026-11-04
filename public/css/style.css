@@ -553,7 +553,7 @@ section h2 {
 }
 
 /* Projects Section */
-.projects {
+section.projects {
     padding-top: 2.5rem;
 }
 
@@ -1075,6 +1075,10 @@ section.closing-cta {
         padding: 2rem 5%;
     }
 
+    section.projects {
+        padding-top: 1.25rem;
+    }
+
     .about-layout {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1159,6 +1163,10 @@ section.closing-cta {
 
     section {
         padding: 1.5rem 3%;
+    }
+
+    section.projects {
+        padding-top: 1.25rem;
     }
 
     section h2 {
