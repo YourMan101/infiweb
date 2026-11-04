@@ -552,7 +552,8 @@ section h2 {
     }
 }
 
-/* Projects Section */
+/* Reduce space above anchored sections */
+section.services,
 section.projects {
     padding-top: 2.5rem;
 }
@@ -1075,6 +1076,7 @@ section.closing-cta {
         padding: 2rem 5%;
     }
 
+    section.services,
     section.projects {
         padding-top: 1.25rem;
     }
@@ -1165,6 +1167,7 @@ section.closing-cta {
         padding: 1.5rem 3%;
     }
 
+    section.services,
     section.projects {
         padding-top: 1.25rem;
     }
