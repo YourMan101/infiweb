@@ -553,6 +553,10 @@ section h2 {
 }
 
 /* Projects Section */
+.projects {
+    padding-top: 2.5rem;
+}
+
 .projects-columns {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
